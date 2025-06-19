@@ -33,7 +33,7 @@ export default function AboutSection() {
   ];
 
   return (
-    <section className="section-padding bg-white relative overflow-hidden">
+    <section className="section-padding mt-8 bg-white relative overflow-hidden">
       {/* Technical Grid Background */}
       <div className="absolute inset-0 opacity-3">
         <div className="w-full h-full" style={{

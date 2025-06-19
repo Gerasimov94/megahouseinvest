@@ -150,12 +150,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .scroll-section {
   scroll-snap-align: start;
-}
-
-@media (min-width: 1024px) {
-  .scroll-section {
-    min-height: 100vh;
-  }
+  min-height: 100vh;
 }
 
 /* Modern Buttons */
