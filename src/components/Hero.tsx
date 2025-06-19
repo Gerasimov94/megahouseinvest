@@ -90,7 +90,7 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative md:h-[640px] l:h-screen overflow-hidden bg-white">
+    <section className="relative md:h-[700px] l:h-screen overflow-hidden bg-white">
       {/* Technical Grid Background */}
       <div className="absolute inset-0 opacity-5">
         <div className="w-full h-full" style={{

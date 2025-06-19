@@ -37,9 +37,9 @@ export default function ContactSection() {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
-          {/* Contact Info - показывается первой на мобильных */}
-          <div className="space-y-8 order-1 lg:order-1">
+        <div className="flex flex-col lg:grid lg:grid-cols-2 gap-12">
+          {/* Contact Info - показывается второй на мобильных, первой на десктопе */}
+          <div className="space-y-8 order-2 lg:order-1">
             <div>
               <h3 className="text-2xl font-bold font-display text-foreground mb-6">
                 Свяжитесь с нами
@@ -115,8 +115,8 @@ export default function ContactSection() {
             </div>
           </div>
 
-          {/* Contact Form - показывается второй на мобильных */}
-          <div className="bg-muted p-8 rounded-2xl order-2 lg:order-2">
+          {/* Contact Form - показывается первой на мобильных, второй на десктопе */}
+          <div className="bg-muted p-8 rounded-2xl order-1 lg:order-2">
             <h3 className="text-xl font-bold font-display text-foreground mb-6">
               Оставить заявку
             </h3>
