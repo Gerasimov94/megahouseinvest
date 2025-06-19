@@ -54,29 +54,46 @@ const slides = [
 export default function Hero() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+  const [isTransitioning, setIsTransitioning] = useState(false);
 
   useEffect(() => {
     if (!isAutoPlaying) return;
 
     const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % slides.length);
+      changeSlide((prev) => (prev + 1) % slides.length);
     }, 6000);
 
     return () => clearInterval(interval);
   }, [isAutoPlaying]);
 
+  const changeSlide = (newSlideIndex: number | ((prev: number) => number)) => {
+    if (isTransitioning) return;
+    
+    setIsTransitioning(true);
+    
+    const nextIndex = typeof newSlideIndex === 'function' ? newSlideIndex(currentSlide) : newSlideIndex;
+    
+    setTimeout(() => {
+      setCurrentSlide(nextIndex);
+      setTimeout(() => {
+        setIsTransitioning(false);
+      }, 50);
+    }, 300);
+  };
+
   const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % slides.length);
+    changeSlide((prev) => (prev + 1) % slides.length);
     setIsAutoPlaying(false);
   };
 
   const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+    changeSlide((prev) => (prev - 1 + slides.length) % slides.length);
     setIsAutoPlaying(false);
   };
 
   const goToSlide = (index: number) => {
-    setCurrentSlide(index);
+    if (index === currentSlide) return;
+    changeSlide(index);
     setIsAutoPlaying(false);
   };
 
@@ -95,7 +112,9 @@ export default function Hero() {
 
       {/* Content */}
       <div className="relative z-10 h-full flex items-center">
-        <div className="container">
+        <div className={`container transition-all duration-500 ease-out ${
+          isTransitioning ? 'opacity-0 transform translate-y-4' : 'opacity-100 transform translate-y-0'
+        }`}>
           <div className="grid lg:grid-cols-12 gap-8 items-center">
             {/* Left Content - Technical Info */}
             <div className="lg:col-span-2">
@@ -103,7 +122,7 @@ export default function Hero() {
                 {/* Project Number */}
                 <div className="space-y-2">
                   <div className="technical-label">Проект</div>
-                  <div className="font-mono text-sm text-primary">
+                  <div className="font-mono text-sm text-primary transition-all duration-300">
                     {slides[currentSlide].technical}
                   </div>
                 </div>
@@ -111,7 +130,7 @@ export default function Hero() {
                 {/* Year */}
                 <div className="space-y-2">
                   <div className="technical-label">Год</div>
-                  <div className="font-mono text-sm text-primary">
+                  <div className="font-mono text-sm text-primary transition-all duration-300">
                     {slides[currentSlide].year}
                   </div>
                 </div>
@@ -119,7 +138,7 @@ export default function Hero() {
                 {/* Location */}
                 <div className="space-y-2">
                   <div className="technical-label">Локация</div>
-                  <div className="font-mono text-sm text-primary">
+                  <div className="font-mono text-sm text-primary transition-all duration-300">
                     {slides[currentSlide].location}
                   </div>
                 </div>
@@ -128,10 +147,10 @@ export default function Hero() {
                 <div className="space-y-2 pt-4 border-t border-border">
                   <div className="technical-label">Опыт работы</div>
                   <div className="flex items-baseline space-x-2">
-                    <div className="font-technical text-2xl font-medium text-accent">
+                    <div className="font-technical text-2xl font-medium text-accent transition-all duration-300">
                       {slides[currentSlide].stats.value}
                     </div>
-                    <div className="blueprint-text">
+                    <div className="blueprint-text transition-all duration-300">
                       {slides[currentSlide].stats.label}
                     </div>
                   </div>
@@ -150,17 +169,17 @@ export default function Hero() {
                 {/* Main Title */}
                 <div className="space-y-2">
                   <h1 className="text-fluid-xl font-technical font-medium leading-none text-balance">
-                    <span className="block text-primary">
+                    <span className="block text-primary transition-all duration-500 transform">
                       {slides[currentSlide].title}
                     </span>
-                    <span className="block text-accent">
+                    <span className="block text-accent transition-all duration-500 transform">
                       {slides[currentSlide].subtitle}
                     </span>
                   </h1>
                 </div>
 
                 {/* Description */}
-                <p className="text-fluid-base text-primary-light max-w-lg mx-auto leading-relaxed font-technical">
+                <p className="text-fluid-base text-primary-light max-w-lg mx-auto leading-relaxed font-technical transition-all duration-500">
                   {slides[currentSlide].description}
                 </p>
 
@@ -168,14 +187,14 @@ export default function Hero() {
                 <div className="flex flex-col sm:flex-row gap-4 justify-center pt-6">
                   <Link 
                     href="/#contact" 
-                    className="btn btn-primary px-6 py-3 text-sm focus-visible"
+                    className="btn btn-primary px-6 py-3 text-sm focus-visible transform transition-all duration-200 hover:scale-105"
                   >
                     НАЧАТЬ ПРОЕКТ
                   </Link>
                   
                   <Link 
                     href="/#portfolio" 
-                    className="btn btn-secondary px-6 py-3 text-sm focus-visible"
+                    className="btn btn-secondary px-6 py-3 text-sm focus-visible transform transition-all duration-200 hover:scale-105"
                   >
                     НАШИ РАБОТЫ
                   </Link>
@@ -191,7 +210,7 @@ export default function Hero() {
                   <div className="technical-label">Технические характеристики</div>
                   <div className="space-y-3">
                     {slides[currentSlide].specs.map((spec, index) => (
-                      <div key={index} className="flex justify-between items-center py-2 border-b border-border/50">
+                      <div key={index} className="flex justify-between items-center py-2 border-b border-border/50 transition-all duration-300">
                         <div className="blueprint-text">{spec.label}</div>
                         <div className="font-mono text-sm font-medium text-accent">{spec.value}</div>
                       </div>
@@ -201,9 +220,9 @@ export default function Hero() {
 
                 {/* Drawing Area Placeholder */}
                 <div className="relative">
-                  <div className="aspect-square bg-muted rounded-lg border-2 border-dashed border-border/50 flex items-center justify-center">
+                  <div className="aspect-square bg-muted rounded-lg border-2 border-dashed border-border/50 flex items-center justify-center transition-all duration-300 hover:border-accent/30">
                     <div className="text-center space-y-2">
-                      <svg className="w-16 h-16 text-primary/20 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-16 h-16 text-primary/20 mx-auto transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                       </svg>
                       <div className="technical-label">Превью чертежа</div>
@@ -211,7 +230,7 @@ export default function Hero() {
                   </div>
                   
                   {/* Technical Note */}
-                  <div className="absolute -bottom-2 -right-2 glass p-3 rounded-lg">
+                  <div className="absolute -bottom-2 -right-2 glass p-3 rounded-lg transition-all duration-300">
                     <div className="text-center">
                       <div className="font-mono text-xs font-medium text-success">СЕРТИФИКАТ</div>
                       <div className="technical-label">эко-дружелюбно</div>
@@ -228,7 +247,7 @@ export default function Hero() {
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20">
         <div className="flex items-center space-x-6">
           {/* Slide Counter */}
-          <div className="font-mono text-xs text-primary-light">
+          <div className="font-mono text-xs text-primary-light transition-all duration-300">
             {String(currentSlide + 1).padStart(2, '0')} / {String(slides.length).padStart(2, '0')}
           </div>
           
@@ -238,11 +257,12 @@ export default function Hero() {
               <button
                 key={index}
                 onClick={() => goToSlide(index)}
-                className={`w-8 h-0.5 transition-all duration-300 focus-visible ${
+                disabled={isTransitioning}
+                className={`w-8 h-0.5 transition-all duration-500 focus-visible ${
                   index === currentSlide
-                    ? 'bg-accent'
-                    : 'bg-primary-light/40 hover:bg-primary-light'
-                }`}
+                    ? 'bg-accent scale-110'
+                    : 'bg-primary-light/40 hover:bg-primary-light hover:scale-105'
+                } ${isTransitioning ? 'opacity-50' : 'opacity-100'}`}
               />
             ))}
           </div>
@@ -252,7 +272,12 @@ export default function Hero() {
       {/* Navigation Arrows */}
       <button
         onClick={prevSlide}
-        className="absolute left-8 top-1/2 transform -translate-y-1/2 z-20 w-10 h-10 border border-border rounded-full flex items-center justify-center hover:bg-muted transition-colors focus-visible"
+        disabled={isTransitioning}
+        className={`absolute left-8 top-1/2 transform -translate-y-1/2 z-20 w-10 h-10 border border-border rounded-full flex items-center justify-center transition-all duration-300 focus-visible ${
+          isTransitioning 
+            ? 'opacity-50 cursor-not-allowed' 
+            : 'hover:bg-muted hover:border-accent hover:scale-110'
+        }`}
       >
         <svg className="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 19l-7-7 7-7" />
@@ -261,7 +286,12 @@ export default function Hero() {
 
       <button
         onClick={nextSlide}
-        className="absolute right-8 top-1/2 transform -translate-y-1/2 z-20 w-10 h-10 border border-border rounded-full flex items-center justify-center hover:bg-muted transition-colors focus-visible"
+        disabled={isTransitioning}
+        className={`absolute right-8 top-1/2 transform -translate-y-1/2 z-20 w-10 h-10 border border-border rounded-full flex items-center justify-center transition-all duration-300 focus-visible ${
+          isTransitioning 
+            ? 'opacity-50 cursor-not-allowed' 
+            : 'hover:bg-muted hover:border-accent hover:scale-110'
+        }`}
       >
         <svg className="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 5l7 7-7 7" />
