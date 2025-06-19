@@ -137,7 +137,7 @@ export default function ServicesSection() {
         <AnimatedSection animation="fade-up" delay={600} className="text-center mt-16">
           <div className="bg-white/50 backdrop-blur-sm rounded-3xl p-12 border border-border/50">
             <h3 className="text-2xl font-serif font-medium text-primary mb-4">
-              Готовы начать свой устойчивый проект?
+              Готовы начать свой проект?
             </h3>
             <p className="text-primary-light mb-8 max-w-2xl mx-auto">
               Свяжитесь с нами для бесплатной консультации и узнайте, 
