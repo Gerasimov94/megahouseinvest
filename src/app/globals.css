@@ -131,13 +131,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Sections */
 .section-padding {
-  padding: 5rem 0;
-}
-
-@media (min-width: 768px) {
-  .section-padding {
-    padding: 8rem 0;
-  }
+  padding: 3rem 0;
 }
 
 .section-full {

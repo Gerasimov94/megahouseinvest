@@ -79,13 +79,13 @@ export default function ServicesSection() {
             <div className="text-xs font-medium tracking-wider text-accent uppercase">
               Наши услуги
             </div>
-            
+
             <h2 className="text-fluid-lg font-serif font-medium text-primary leading-tight max-w-4xl mx-auto">
-              Создаем устойчивые <span className="text-gradient">решения</span> для каждого пространства
+              Создаем <span className="text-gradient">решения</span> для каждого пространства
             </h2>
-            
+
             <p className="text-lg text-primary-light max-w-2xl mx-auto leading-relaxed">
-              От концепции до реализации — комплексные услуги по созданию 
+              От концепции до реализации — комплексные услуги по созданию
               экологичных и энергоэффективных пространств
             </p>
           </div>
@@ -93,24 +93,19 @@ export default function ServicesSection() {
 
         <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-8">
           {services.map((service, index) => (
-            <AnimatedSection 
-              key={index} 
-              animation="fade-up" 
+            <AnimatedSection
+              key={index}
+              animation="fade-up"
               delay={index * 100}
               className="group"
             >
               <div className="card p-8 h-full hover:shadow-xl transition-all duration-300">
-                {/* Icon */}
-                <div className="w-16 h-16 bg-gradient-accent rounded-xl flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform">
-                  {service.icon}
-                </div>
-
                 {/* Content */}
                 <div className="space-y-4">
                   <h3 className="text-xl font-serif font-medium text-primary">
                     {service.title}
                   </h3>
-                  
+
                   <p className="text-primary-light leading-relaxed">
                     {service.description}
                   </p>
@@ -140,18 +135,18 @@ export default function ServicesSection() {
               Готовы начать свой проект?
             </h3>
             <p className="text-primary-light mb-8 max-w-2xl mx-auto">
-              Свяжитесь с нами для бесплатной консультации и узнайте, 
+              Свяжитесь с нами для бесплатной консультации и узнайте,
               как мы можем помочь создать ваше идеальное экологичное пространство
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a 
-                href="#contact" 
+              <a
+                href="#contact"
                 className="btn btn-primary px-8 py-4 focus-visible"
               >
                 Получить консультацию
               </a>
-              <a 
-                href="tel:+74951234567" 
+              <a
+                href="tel:+74951234567"
                 className="btn btn-secondary px-8 py-4 focus-visible"
               >
                 Позвонить сейчас
@@ -162,4 +157,4 @@ export default function ServicesSection() {
       </div>
     </section>
   );
-} 
+}

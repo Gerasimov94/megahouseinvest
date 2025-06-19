@@ -32,15 +32,6 @@ export default function AboutSection() {
     }
   ];
 
-  const companyStats = [
-    { label: "основана", value: "2009", unit: "год" },
-    { label: "проектов завершено", value: "200+", unit: "зданий" },
-    { label: "снижение co₂", value: "85%", unit: "в среднем" },
-    { label: "энергоэффективность", value: "А+", unit: "класс" },
-    { label: "довольных клиентов", value: "100%", unit: "показатель" },
-    { label: "срок гарантии", value: "5", unit: "лет" }
-  ];
-
   return (
     <section className="section-padding bg-white relative overflow-hidden">
       {/* Technical Grid Background */}
@@ -56,64 +47,20 @@ export default function AboutSection() {
 
       <div className="container relative z-10">
         <div className="grid lg:grid-cols-12 gap-8">
-          {/* Left Column - Company Info */}
-          <div className="lg:col-span-3">
-            <AnimatedSection animation="slide-right">
-              <div className="space-y-8">
-                {/* Section Header */}
-                <div className="space-y-4">
-                  <div className="technical-label">О компании</div>
-                  <div className="font-mono text-sm text-primary">МЕГАХАУС_ИНВЕСТ</div>
-                  <div className="technical-label">Осн. 2009</div>
-                </div>
-
-                {/* Company Stats */}
-                <div className="space-y-6">
-                  <div className="technical-label">Статистика компании</div>
-                  <div className="space-y-4">
-                    {companyStats.map((stat, index) => (
-                      <div key={index} className="space-y-1">
-                        <div className="blueprint-text">{stat.label}</div>
-                        <div className="flex items-baseline space-x-2">
-                          <div className="font-technical text-lg font-medium text-accent">
-                            {stat.value}
-                          </div>
-                          <div className="technical-label">{stat.unit}</div>
-                        </div>
-                        {index < companyStats.length - 1 && (
-                          <div className="w-full h-px bg-border/30 mt-3"></div>
-                        )}
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Certification Badge */}
-                <div className="border border-accent/30 rounded-lg p-4 bg-accent/5">
-                  <div className="text-center space-y-2">
-                    <div className="font-mono text-xs font-medium text-success">СЕРТИФИКАТ</div>
-                    <div className="technical-label">исо-14001</div>
-                    <div className="technical-label">экология</div>
-                  </div>
-                </div>
-              </div>
-            </AnimatedSection>
-          </div>
-
-          {/* Center Column - Main Content */}
-          <div className="lg:col-span-6">
+          {/* Main Content - Expanded */}
+          <div className="lg:col-span-8">
             <AnimatedSection animation="fade-up">
               <div className="space-y-8">
                 {/* Mission Statement */}
                 <div className="space-y-6">
-                  <div className="technical-label">Миссия компании</div>
+                  <div className="technical-label">О компании • Осн. 2009</div>
                   
                   <h2 className="text-fluid-lg font-technical font-medium text-primary leading-tight">
                     СОЗДАЕМ УСТОЙЧИВЫЕ<br />
                     <span className="text-accent">ПРОСТРАНСТВА ДЛЯ ЖИЗНИ</span>
                   </h2>
                   
-                  <div className="space-y-4 text-primary-light font-technical text-fluid-base leading-relaxed max-w-2xl">
+                  <div className="space-y-4 text-primary-light font-technical text-fluid-base leading-relaxed max-w-3xl">
                     <p>
                       Мы — команда профессионалов, объединенных общей миссией создания 
                       экологичных и энергоэффективных домов.
@@ -129,10 +76,10 @@ export default function AboutSection() {
                 <div className="space-y-6">
                   <div className="technical-label">Основные принципы</div>
                   
-                  <div className="grid gap-6">
+                  <div className="grid gap-4 lg:gap-6">
                     {principles.map((principle, index) => (
-                      <div key={index} className="border border-border/50 rounded-lg p-6 hover:border-accent/50 transition-colors group">
-                        <div className="grid md:grid-cols-3 gap-4 items-center">
+                      <div key={index} className="border border-border/50 rounded-lg p-4 lg:p-6 hover:border-accent/50 transition-colors group">
+                        <div className="grid md:grid-cols-3 gap-3 lg:gap-4 items-center">
                           {/* Code */}
                           <div className="space-y-1">
                             <div className="technical-label">Код</div>
@@ -162,7 +109,7 @@ export default function AboutSection() {
           </div>
 
           {/* Right Column - Technical Diagram */}
-          <div className="lg:col-span-3">
+          <div className="lg:col-span-4">
             <AnimatedSection animation="slide-left" delay={200}>
               <div className="space-y-8">
                 {/* Environmental Impact */}
@@ -215,12 +162,28 @@ export default function AboutSection() {
                   </div>
                 </div>
 
+                {/* Key Stats */}
+                <div className="space-y-4">
+                  <div className="technical-label">Ключевые показатели</div>
+                  
+                  <div className="grid grid-cols-2 gap-4">
+                    <div className="text-center p-4 border border-border/30 rounded-lg">
+                      <div className="font-technical text-lg font-medium text-accent">200+</div>
+                      <div className="technical-label">проектов</div>
+                    </div>
+                    <div className="text-center p-4 border border-border/30 rounded-lg">
+                      <div className="font-technical text-lg font-medium text-accent">15</div>
+                      <div className="technical-label">лет опыта</div>
+                    </div>
+                  </div>
+                </div>
+
                 {/* Contact CTA */}
                 <div className="border border-accent/30 rounded-lg p-4 bg-accent/5">
                   <div className="space-y-3">
                     <div className="technical-label">Начать работу</div>
                     <p className="text-xs text-primary-light leading-relaxed">
-                      Готовы обсудить ваш экологичный проект?
+                      Готовы обсудить ваш будущий проект?
                     </p>
                     <a 
                       href="#contact" 

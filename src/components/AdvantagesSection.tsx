@@ -83,7 +83,7 @@ export default function AdvantagesSection() {
                 Лицензии и сертификаты
               </h3>
               <p className="text-primary-dark mb-8">
-                Мы работаем в полном соответствии с требованиями законодательства 
+                Мы работаем в полном соответствии с требованиями законодательства
                 и имеем все необходимые разрешения для осуществления строительной деятельности.
               </p>
               <div className="grid grid-cols-1 gap-4">
@@ -113,4 +113,4 @@ export default function AdvantagesSection() {
       </div>
     </section>
   );
-} 
+}
