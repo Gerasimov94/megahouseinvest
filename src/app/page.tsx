@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <>
       <Header />
-      <main className="relative pt-15 lg:pt-0">
+      <main className="relative">
         {/* Hero Section - Full Screen */}
         <section className="scroll-section">
           <Hero />

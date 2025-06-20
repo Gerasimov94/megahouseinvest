@@ -62,18 +62,26 @@ export default function Header() {
 
           {/* CTA Button */}
           <div className="hidden lg:block">
-            <Link
-              href="/#contact"
+            <button
+              onClick={() => {
+                const contactSection = document.getElementById('contact');
+                if (contactSection) {
+                  scrollTo({
+                    top: contactSection.offsetTop - 60,
+                    behavior: 'smooth'
+                  });
+                }
+              }}
               className="btn btn-primary px-6 py-2 text-sm"
             >
               КОНСУЛЬТАЦИЯ
-            </Link>
+            </button>
           </div>
 
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="lg:hidden w-10 h-10 flex flex-col items-center justify-center space-y-1.5"
+            className="lg:hidden w-10 h-10 flex flex-col cursor-pointer items-center justify-center space-y-1.5"
           >
             <span className={`w-6 h-0.5 bg-primary transition-all duration-300 ${isMenuOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
             <span className={`w-6 h-0.5 bg-primary transition-all duration-300 ${isMenuOpen ? 'opacity-0' : ''}`}></span>
@@ -99,15 +107,6 @@ export default function Header() {
                   {item.name}
                 </Link>
               ))}
-              <div className="pt-4 border-t border-border/30">
-                <Link
-                  href="/#contact"
-                  onClick={() => setIsMenuOpen(false)}
-                  className="btn btn-primary w-full py-3 text-sm"
-                >
-                  КОНСУЛЬТАЦИЯ
-                </Link>
-              </div>
             </nav>
           </div>
         </div>

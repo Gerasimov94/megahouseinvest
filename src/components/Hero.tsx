@@ -105,7 +105,7 @@ export default function Hero() {
       {/* Content */}
       <div className="relative z-10 min-h-screen flex items-start lg:items-center">
         <div className="container pt-10 md:pt-16 lg:pt-0 pb-32 md:pb-40 lg:pb-0">
-          <div className="grid lg:grid-cols-12 gap-6 md:gap-8 md:mt-0 mt-[60px] items-start lg:items-center w-full">
+          <div className="grid lg:grid-cols-12 gap-6 lg:gap-8 lg:mt-0 mt-[100px] items-start lg:items-center w-full">
             {/* Left Content - Technical Info - скрыто на мобильных */}
             <div className="hidden lg:block lg:col-span-2">
               <div className="relative min-h-[200px]">
