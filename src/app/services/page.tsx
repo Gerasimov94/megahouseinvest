@@ -281,7 +281,7 @@ export default function ServicesPage() {
                  Получить консультацию
                </Link>
               <a 
-                href="tel:+74951234567" 
+                href="tel:+79001847777" 
                 className="inline-block border-2 border-white text-white hover:bg-white hover:text-primary px-8 py-3 rounded-lg font-medium transition-colors"
               >
                 Позвонить сейчас

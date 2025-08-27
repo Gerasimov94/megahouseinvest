@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -21,28 +22,40 @@ export default function Header() {
     { name: 'О компании', href: '/about' },
     { name: 'Услуги', href: '/services' },
     { name: 'Портфолио', href: '/#portfolio' },
-    { name: 'Контакты', href: '/#contact' },
   ];
 
   return (
     <header 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled 
-          ? 'bg-white/90 backdrop-blur-md shadow-sm border-b border-border/20' 
-          : 'bg-transparent'
+          ? 'bg-white/90 backdrop-blur-md shadow-sm border-b border-border/20'
+          : 'bg-black/40'
       }`}
     >
       <div className="container">
         <div className="flex items-center justify-between h-20">
-          {/* Logo */}
-          <Link href="/" className="flex items-center space-x-3 group">
-            <div className="w-10 h-10 border-2 border-primary rounded-sm flex items-center justify-center group-hover:border-accent transition-colors">
-              <span className="font-technical text-sm font-bold text-primary group-hover:text-accent transition-colors">
-                МИ
-              </span>
-            </div>
-            <div className="font-technical text-lg font-medium text-primary group-hover:text-accent transition-colors">
-              МегаХаус Инвест
+          <Link href="/" className="flex items-end space-x-3 group">
+            <Image 
+              src="/logo.svg" 
+              alt="Logo" 
+              width={52} 
+              height={52} 
+              className={`transition-all duration-300 ${
+                isScrolled ? '' : 'invert brightness-0'
+              }`}
+            />
+            <div className="flex flex-col">
+              <div className={`font-technical text-2xl font-medium group-hover:text-accent transition-colors ${
+                isScrolled ? 'text-primary' : 'text-white'
+              }`}>
+                <span className={isScrolled ? 'text-primary' : 'text-white'}>МегаХаус</span>
+                <span className="text-accent">Инвест</span>
+              </div>
+              <div className={`font-technical text-xs mb-[2px] group-hover:text-accent transition-colors ${
+                isScrolled ? 'text-primary' : 'text-white/80'
+              }`}>
+                Строительная компания
+              </div>
             </div>
           </Link>
 
@@ -52,40 +65,47 @@ export default function Header() {
               <Link
                 key={item.name}
                 href={item.href}
-                className="relative font-technical text-sm text-primary hover:text-accent transition-colors group"
+                className={`relative font-technical text-base hover:text-accent transition-colors group ${
+                  isScrolled ? 'text-primary' : 'text-white'
+                }`}
               >
                 {item.name}
                 <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-accent group-hover:w-full transition-all duration-300"></span>
               </Link>
             ))}
+            <div className="hidden lg:flex flex-col space-y-1 text-left">
+              <div className={`font-technical text-xs ${
+                isScrolled ? 'text-primary/70' : 'text-white/80'
+              }`}>
+                Ул.Текучева 238/73
+              </div>
+              <div className="flex flex-col space-y-0.5">
+                <a
+                  href="tel:+79001847777"
+                  className={`font-technical text-sm hover:text-accent transition-colors ${
+                    isScrolled ? 'text-primary' : 'text-white'
+                  }`}
+                >
+                  +7-900-184-77-77
+                </a>
+              </div>
+            </div>
           </nav>
-
-          {/* CTA Button */}
-          <div className="hidden lg:block">
-            <button
-              onClick={() => {
-                const contactSection = document.getElementById('contact');
-                if (contactSection) {
-                  scrollTo({
-                    top: contactSection.offsetTop - 60,
-                    behavior: 'smooth'
-                  });
-                }
-              }}
-              className="btn btn-primary px-6 py-2 text-sm"
-            >
-              КОНСУЛЬТАЦИЯ
-            </button>
-          </div>
 
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             className="lg:hidden w-10 h-10 flex flex-col cursor-pointer items-center justify-center space-y-1.5"
           >
-            <span className={`w-6 h-0.5 bg-primary transition-all duration-300 ${isMenuOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
-            <span className={`w-6 h-0.5 bg-primary transition-all duration-300 ${isMenuOpen ? 'opacity-0' : ''}`}></span>
-            <span className={`w-6 h-0.5 bg-primary transition-all duration-300 ${isMenuOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
+            <span className={`w-6 h-0.5 transition-all duration-300 ${isMenuOpen ? 'rotate-45 translate-y-2' : ''} ${
+              isScrolled ? 'bg-primary' : 'bg-white'
+            }`}></span>
+            <span className={`w-6 h-0.5 transition-all duration-300 ${isMenuOpen ? 'opacity-0' : ''} ${
+              isScrolled ? 'bg-primary' : 'bg-white'
+            }`}></span>
+            <span className={`w-6 h-0.5 transition-all duration-300 ${isMenuOpen ? '-rotate-45 -translate-y-2' : ''} ${
+              isScrolled ? 'bg-primary' : 'bg-white'
+            }`}></span>
           </button>
         </div>
       </div>
@@ -107,6 +127,23 @@ export default function Header() {
                   {item.name}
                 </Link>
               ))}
+              
+              {/* Mobile Contacts */}
+              <div className="border-t border-border/20 pt-4 mt-4">
+                <div className="space-y-2">
+                  <div className="font-technical text-xs text-primary/70">
+                    Ул.Текучева 238/73
+                  </div>
+                  <div className="space-y-1">
+                    <a
+                      href="tel:+79001847777"
+                      className="block font-technical text-sm text-primary hover:text-accent transition-colors"
+                    >
+                     +7-900-184-77-77
+                    </a>
+                  </div>
+                </div>
+              </div>
             </nav>
           </div>
         </div>

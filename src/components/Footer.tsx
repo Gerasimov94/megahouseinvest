@@ -88,10 +88,10 @@ export default function Footer() {
               <h3 className="font-serif font-medium text-xl mb-6">Контакты</h3>
               <div className="space-y-4">
                 <a 
-                  href="tel:+74951234567" 
+                  href="tel:+79001847777" 
                   className="block text-white/80 hover:text-accent-light transition-colors"
                 >
-                  +7 (495) 123-45-67
+                  +7-900-184-77-77
                 </a>
                 <a 
                   href="mailto:info@megahouseinvest.ru" 

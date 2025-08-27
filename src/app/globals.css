@@ -165,7 +165,6 @@ h1, h2, h3, h4, h5, h6 {
   padding: 0.875rem 2rem;
   border-radius: var(--radius);
   font-weight: 500;
-  font-size: 0.875rem;
   line-height: 1.25;
   transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   text-decoration: none;
@@ -198,7 +197,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .btn-accent {
   background: var(--accent);
-  color: white;
+  color: black;
 }
 
 .btn-accent:hover {
