@@ -3,54 +3,24 @@ import AnimatedSection from './AnimatedSection';
 export default function ServicesSection() {
   const services = [
     {
-      title: 'Эко-строительство',
+      title: 'Строительство',
       description: 'Проектирование и возведение энергоэффективных домов с использованием натуральных материалов',
       icon: (
         <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
         </svg>
       ),
-      features: ['Экологичные материалы', 'A+ энергоэффективность', 'CO₂ нейтральность']
-    },
-    {
-      title: 'Умный дом',
-      description: 'Интеграция современных технологий для комфортного и экономичного проживания',
-      icon: (
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
-        </svg>
-      ),
-      features: ['Автоматизация', 'Энергосбережение', 'Безопасность']
-    },
-    {
-      title: 'Ландшафтный дизайн',
-      description: 'Создание гармоничного пространства между домом и природным окружением',
-      icon: (
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-        </svg>
-      ),
-      features: ['Устойчивые растения', 'Водосбережение', 'Биоразнообразие']
-    },
-    {
-      title: 'Реконструкция',
-      description: 'Модернизация существующих зданий с повышением их экологичности',
-      icon: (
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
-        </svg>
-      ),
-      features: ['Повышение эффективности', 'Современные стандарты', 'Обновление систем']
+      features: ['Экологичные материалы', 'Кострукции любой сложности', 'Гарантия результата']
     },
     {
       title: 'Консалтинг',
-      description: 'Экспертные консультации по устойчивому строительству и зеленым технологиям',
+      description: 'Экспертные консультации по строительству и сопровождительной документации',
       icon: (
         <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
         </svg>
       ),
-      features: ['Стратегия устойчивости', 'Сертификация', 'Оптимизация']
+      features: ['Стратегия устойчивости', 'Сертификация', 'Документация']
     },
     {
       title: 'Инженерные системы',
@@ -61,7 +31,7 @@ export default function ServicesSection() {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
         </svg>
       ),
-      features: ['Возобновляемая энергия', 'Водоочистка', 'Климат-контроль']
+      features: ['Электроснабжение', 'Отопление', 'Водоснабжение']
     }
   ];
 
