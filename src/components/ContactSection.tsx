@@ -81,7 +81,7 @@ export default function ContactSection() {
 
   return (
     <section id="contact" className="py-16 lg:py-24 bg-white">
-      <div className="px-6 lg:px-16 xl:px-32">
+      <div className="px-12 lg:px-16 xl:px-32">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold font-display text-foreground mb-4">
             Контакты
