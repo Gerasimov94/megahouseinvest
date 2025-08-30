@@ -3,25 +3,21 @@ import AnimatedSection from './AnimatedSection';
 export default function AboutSection() {
   const principles = [
     {
-      title: "Полный цикл строительства",
-      description: "Работаем от архитектурного проекта до регистрации",
+      title: "Строить с доверием",
+      description: "Мы берем на себя всю сложность процесса, чтобы подарить нашим клиентам уверенность в завтрашнем дне и ключи от идеального дома, построенного в срок и в рамках бюджета.",
     },
     {
-      title: "КОНТРОЛЬ КАЧЕСТВА",
-      description: "Строгий контроль на каждом этапе строительства",
+      title: "Превращать сложные задачи в простые и элегантные решения",
+      description: "Мы строим с душой, думаем о деталях и берем на себя ответственность за результат, чтобы вы могли наслаждаться процессом созидания вместе с нами.",
     },
     {
-      title: "ИННОВАЦИИ",
-      description: "Передовые технологии и энергоэффективные решения",
-    },
-    {
-      title: "ИНДИВИДУАЛЬНОСТЬ",
-      description: "Каждый проект уникален и отражает личность владельца",
+      title: "Реализовывать амбициозные проекты",
+      description: "Реализовывать амбициозные проекты любой сложности, объединяя лучших профессионалов и самые эффективные процессы, чтобы обеспечивать исключительную ценность для наших клиентов, партнеров и общества.",
     }
   ];
 
   return (
-    <section className="section-padding mt-8 bg-white relative overflow-hidden">
+    <section className="py-16 lg:py-24 bg-white relative overflow-hidden">
       {/* Technical Grid Background */}
       <div className="absolute inset-0 opacity-3">
         <div className="w-full h-full" style={{
@@ -33,62 +29,48 @@ export default function AboutSection() {
         }}></div>
       </div>
 
-      <div className="container relative z-10">
-        <div>
-          {/* Main Content - Expanded */}
-          <div className="lg:col-span-8">
-            <AnimatedSection animation="fade-up">
-              <div className="space-y-8">
-                {/* Mission Statement */}
-                <div className="space-y-6">
-                  <h2 className="text-fluid-lg font-technical font-medium text-primary leading-tight">
-                    СОЗДАЕМ УСТОЙЧИВЫЕ<br />
-                    <span className="text-accent">ПРОСТРАНСТВА ДЛЯ ЖИЗНИ</span>
-                  </h2>
-                  <div className="space-y-4 text-primary-light font-technical text-fluid-base leading-relaxed max-w-3xl">
-                    <p>
-                      Мы — команда профессионалов, объединенных общей миссией создания 
-                      экологичных и энергоэффективных домов.
-                    </p>
-                    <p>
-                      Наша философия основана на гармонии с природой и использовании 
-                      передовых технологий для минимизации воздействия на окружающую среду.
-                    </p>
-                  </div>
-                </div>
-
-                {/* Technical Principles */}
-                <div className="space-y-6">
-                  <div className="technical-label">Основные принципы</div>
-                  <div className="grid gap-4 lg:gap-6">
-                    {principles.map((principle, index) => (
-                      <div key={index} className="border border-border/50 rounded-lg p-4 lg:p-6 hover:border-accent/50 transition-colors group">
-                        <div className="grid md:grid-cols-3 gap-3 lg:gap-4 items-center">
-                          <div className="md:col-span-2 space-y-2">
-                            <div className="flex items-center justify-between">
-                              <h3 className="font-technical text-sm font-medium text-primary group-hover:text-accent transition-colors">
-                                {principle.title}
-                              </h3>
-                            </div>
-                            <p className="text-sm text-primary-light">{principle.description}</p>
-                          </div>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
+      <div className="relative z-10 px-6 lg:px-16 xl:px-32">
+        <AnimatedSection animation="fade-up">
+          <div className="space-y-16">
+            {/* Mission Statement */}
+            <div className="space-y-6 text-center">
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-technical font-medium text-primary leading-tight">
+                О <span className="text-accent">КОМПАНИИ</span>
+              </h2>
+              <div className="space-y-4 text-primary-light font-technical text-lg md:text-xl leading-relaxed max-w-4xl mx-auto">
+                <p>
+                  Мы не просто строим здания — мы создаем пространства, где начнется новая глава вашей жизни. 
+                  Где будут звучать детские шаги и собираться за большим столом несколько поколений семьи. 
+                </p>
+                <p>
+                  Доверьте нам воплощение вашей самой сокровенной мечты — мечты о собственном доме.
+                </p>
               </div>
-            </AnimatedSection>
-          </div>
+            </div>
 
-          {/* Right Column - Technical Diagram */}
-          <div className="lg:col-span-4">
-            <AnimatedSection animation="slide-left" delay={200}>
-              <div className="space-y-8">
+            {/* Technical Principles */}
+            <div className="space-y-12">
+              <div className="text-center">
+                <h3 className="text-3xl md:text-4xl font-technical font-medium text-primary mb-4">
+                  НАША МИССИЯ
+                </h3>
+                <div className="w-20 h-1 bg-accent mx-auto"></div>
               </div>
-            </AnimatedSection>
+              <div className="grid md:grid-cols-3 gap-8 lg:gap-12">
+                {principles.map((principle, index) => (
+                  <div key={index} className="border border-border/30 rounded-lg p-6 lg:p-8 hover:border-accent/50 transition-all duration-300 hover:shadow-lg group bg-white/50">
+                    <div className="space-y-4">
+                      <h4 className="font-technical text-lg font-semibold text-primary group-hover:text-accent transition-colors leading-tight">
+                        {principle.title}
+                      </h4>
+                      <p className="text-sm text-primary-light leading-relaxed">{principle.description}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
-        </div>
+        </AnimatedSection>
       </div>
     </section>
   );

@@ -52,10 +52,10 @@ export default function PortfolioSection() {
       <div className="container">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold font-display text-foreground mb-4">
-            Наши работы
+            Наши проекты
           </h2>
           <p className="text-lg text-primary-dark max-w-2xl mx-auto">
-            Примеры наших проектов и отзывы довольных клиентов
+            Уже более 500 семей живут в домах, построенных нашими специалистами!
           </p>
         </div>
 
@@ -94,9 +94,9 @@ export default function PortfolioSection() {
         {/* Testimonials */}
         <div className="bg-muted rounded-2xl p-8 md:p-12">
           <div className="text-center mb-12">
-            <h3 className="text-2xl font-bold font-display text-foreground mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold font-technical mb-4">
               Отзывы клиентов
-            </h3>
+            </h2>
             <p className="text-primary-dark">
               Что говорят о нас наши клиенты
             </p>

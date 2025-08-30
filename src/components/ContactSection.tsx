@@ -12,7 +12,6 @@ export default function ContactSection() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Здесь будет логика отправки формы
     console.log('Form submitted:', formData);
     alert('Спасибо за заявку! Мы свяжемся с вами в ближайшее время.');
     setFormData({ name: '', phone: '', email: '', message: '' });
@@ -26,8 +25,8 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="section-padding bg-white">
-      <div className="container">
+    <section id="contact" className="py-16 lg:py-0 bg-white">
+      <div className="px-6 lg:px-16 xl:px-32">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold font-display text-foreground mb-4">
             Контакты
@@ -76,8 +75,8 @@ export default function ContactSection() {
                 </div>
                 <div>
                   <h4 className="font-semibold text-foreground mb-1">Email</h4>
-                  <a href="mailto:info@megahouseinvest.ru" className="text-primary-dark hover:text-primary transition-colors">
-                    info@megahouseinvest.ru
+                  <a href="mailto:megahouseinvest@mail.ru" className="text-primary-dark hover:text-primary transition-colors">
+                    megahouseinvest@mail.ru
                   </a>
                 </div>
               </div>
@@ -92,7 +91,7 @@ export default function ContactSection() {
                 <div>
                   <h4 className="font-semibold text-foreground mb-1">Адрес</h4>
                   <p className="text-primary-dark">
-                    г. Москва, ул. Примерная, д. 123, офис 456
+                    Ул.Текучева 238/73
                   </p>
                 </div>
               </div>
@@ -165,7 +164,7 @@ export default function ContactSection() {
                   value={formData.email}
                   onChange={handleChange}
                   className="w-full px-4 py-3 rounded-lg border border-border bg-white text-foreground focus:border-primary focus:outline-none transition-colors"
-                  placeholder="stasbogatin@mail.ru"
+                  placeholder="Ваш email"
                 />
               </div>
 
@@ -180,7 +179,7 @@ export default function ContactSection() {
                   value={formData.message}
                   onChange={handleChange}
                   className="w-full px-4 py-3 rounded-lg border border-border bg-white text-foreground focus:border-primary focus:outline-none transition-colors resize-none"
-                  placeholder="Расскажите о вашем проекте..."
+                  placeholder="Расскажите о ваших пожеланиях, или оставьте заявку - наши специалисты свяжутся с вами в ближайшее время."
                 />
               </div>
 

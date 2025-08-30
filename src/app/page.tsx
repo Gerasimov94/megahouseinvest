@@ -22,7 +22,7 @@ export default function Home() {
         <section className="scroll-section section-full">
           <ServicesSection />
         </section>
-        <section className="scroll-section section-full">
+        <section>
           <AdvantagesSection />
         </section>
         <section className="scroll-section section-full">

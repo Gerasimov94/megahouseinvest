@@ -13,19 +13,15 @@ export default function PlayerSection() {
 			fill
 			className="object-cover z-0 brightness-60"
 		/>
-		
-		{/* Градиентный оверлей для читаемости текста */}
-		<div className="absolute top-0 left-0 w-full h-full bg-black/20 z-10"></div>
-		
-		{/* Контент поверх фото */}
-		<div className="relative z-20 flex flex-col items-center justify-center h-full px-4 pt-20">
+		<div className="absolute top-0 left-0 w-full h-full bg-black/30 z-10"></div>
+		<div className="relative z-20 flex flex-col items-center justify-center h-full px-6 lg:px-16 xl:px-32 pt-20">
 			<h1 className="text-4xl md:text-6xl font-bold text-primary text-white text-center mb-2 drop-shadow-lg">
-				Современный дом под ключ
+				Мечтайте о жизни. <br />Дом построим мы.
 			</h1>
 			<p className="text-lg md:text-xl text-white text-center max-w-2xl mb-8 drop-shadow-md">
-				Строительная компания полного цикла. Строим дома с гарантией качества.
+				Создаем будущее, в котором хотим жить
 			</p>
-			<div className="hidden lg:block">
+			<div>
             <button
               onClick={() => {
                 const contactSection = document.getElementById('contact');

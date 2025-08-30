@@ -114,8 +114,8 @@ export default function Header() {
       <div className={`lg:hidden overflow-hidden transition-all duration-300 ${
         isMenuOpen ? 'max-h-screen' : 'max-h-0'
       }`}>
-        <div className="bg-white/95 backdrop-blur-md border-t border-border/20">
-          <div className="container py-6">
+        <div className="pt-6 pb-6 bg-white/95 backdrop-blur-md border-t border-border/20">
+          <div className="container py-6 px-4">
             <nav className="space-y-4">
               {navItems.map((item) => (
                 <Link

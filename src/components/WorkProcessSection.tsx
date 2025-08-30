@@ -1,104 +1,88 @@
 const steps = [
   {
     number: '01',
-    title: 'Консультация и планирование',
-    description: 'Обсуждаем ваши потребности, изучаем участок, составляем техническое задание',
-    duration: '1-2 недели'
+    title: 'Глубокое погружение',
+    description: 'Мы начинаем с диалога, чтобы понять ваш образ жизни, вкусы и мечты.'
   },
   {
     number: '02',
-    title: 'Проектирование',
-    description: 'Разрабатываем архитектурный проект, создаем 3D-визуализацию, готовим рабочие чертежи',
-    duration: '2-4 недели'
+    title: 'Проект как портрет',
+    description: 'Наша цель - не просто создать дом, а сделать его отражением вашего образа жизни. Поэтому мы тщательно учитываем все ваши пожелания и предложения.'
   },
   {
     number: '03',
-    title: 'Согласование и разрешения',
-    description: 'Получаем все необходимые разрешения и согласования для начала строительства',
-    duration: '1-3 недели'
+    title: 'Юридическая чистота',
+    description: 'Поможем с оформлением участка и получением всех необходимых разрешений.'
   },
   {
     number: '04',
-    title: 'Подготовительные работы',
-    description: 'Подготовка участка, разметка, завоз материалов и техники на объект',
-    duration: '1 неделя'
+    title: 'Комплекс работ',
+    description: 'От нулевого цикла с заливкой фундамента до финальной отделки с установкой всех инженерных систем.'
   },
   {
     number: '05',
-    title: 'Основные строительные работы',
-    description: 'Возведение фундамента, стен, кровли, монтаж инженерных систем',
-    duration: '3-6 месяцев'
+    title: 'Контроль качества',
+    description: 'На каждом этапе за процессом следят наши опытные руководители и технические специалисты.'
   },
   {
     number: '06',
-    title: 'Отделочные работы',
-    description: 'Внутренняя и внешняя отделка, установка сантехники, электрики, финишные работы',
-    duration: '1-3 месяца'
-  },
-  {
-    number: '07',
     title: 'Сдача объекта',
-    description: 'Финальная проверка качества, устранение замечаний, передача документов',
-    duration: '1-2 недели'
+    description: 'Вы получаете не просто коробку, а дом мечты, построенный нашими лучшими специалистами.'
   }
 ];
 
 export default function WorkProcessSection() {
   return (
-    <section className="section-padding bg-muted">
-      <div className="container">
+    <section className="py-16 bg-muted">
+      <div className="px-6 lg:px-16 xl:px-32">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold font-display text-foreground mb-4">
-            Этапы работы
+          <h2 className="text-3xl md:text-4xl font-bold font-technical text-foreground mb-4">
+            Всего <span className="text-accent">шесть шагов</span> и ваш дом готов!
           </h2>
-          <p className="text-lg text-primary-dark max-w-2xl mx-auto">
-            Пошаговый процесс строительства вашего дома — от идеи до готового объекта
-          </p>
         </div>
 
-        <div className="grid gap-8 md:gap-12">
-          {steps.map((step, index) => (
-            <div key={index} className="relative">
-              {/* Connection line */}
-              {index < steps.length - 1 && (
-                <div className="hidden md:block absolute left-16 top-32 w-0.5 h-16 bg-border"></div>
-              )}
-              
-              <div className="grid md:grid-cols-[auto_1fr] gap-6 md:gap-8">
-                {/* Step number */}
-                <div className="flex flex-col items-center md:items-start">
-                  <div className="w-16 h-16 bg-primary rounded-2xl flex items-center justify-center text-white font-bold text-xl font-display mb-4">
+        <div className="relative steps-timeline">
+          <div className="absolute left-6 md:left-8 top-6 md:top-8 bottom-30 md:bottom-20 w-0.5 bg-gradient-to-b from-accent via-accent to-accent opacity-30"></div>
+          <div className="space-y-8 md:space-y-12">
+            {steps.map((step, index) => (
+              <div 
+                key={index} 
+                className={`relative flex items-start gap-4 md:gap-8 step-item ${index === steps.length - 1 ? 'last-step' : ''}`}
+              >
+                <div className="relative z-10 flex-shrink-0">
+                  <div className="w-12 h-12 md:w-16 md:h-16 bg-accent rounded-xl md:rounded-2xl flex items-center justify-center text-black font-bold text-lg md:text-xl font-technical shadow-lg">
                     {step.number}
                   </div>
-                  <div className="text-sm text-primary-dark font-medium">
-                    {step.duration}
-                  </div>
                 </div>
-
-                {/* Step content */}
-                <div className="bg-white p-8 rounded-xl shadow-sm border border-border">
-                  <h3 className="text-xl font-semibold font-display text-foreground mb-4">
+                <div className="flex-1 bg-white p-6 md:p-8 rounded-xl shadow-sm border border-border hover:shadow-md transition-shadow duration-300">
+                  <h3 className="text-lg md:text-xl font-semibold font-technical text-foreground mb-3 md:mb-4">
                     {step.title}
                   </h3>
-                  <p className="text-primary-dark">
+                  <p className="text-primary-dark leading-relaxed text-sm md:text-base">
                     {step.description}
                   </p>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
 
         <div className="text-center mt-16">
-          <p className="text-primary-dark mb-6">
-            Готовы начать строительство вашего дома?
-          </p>
-          <a 
-            href="#contact" 
-            className="inline-block bg-primary hover:bg-primary-dark text-white px-8 py-3 rounded-lg font-medium transition-colors"
-          >
-            Начать проект
-          </a>
+          <div className="bg-white/50 border border-border shadow-sm backdrop-blur-sm rounded-2xl py-8 mx-auto">
+            <h3 className="text-2xl text-foreground font-technical mb-4">
+              Итог:
+            </h3>
+            <p className="text-primary-dark mb-6 leading-relaxed">
+              Вы экономите ваше время, нервы и бюджет, получая гарантированный результат,
+              который превзойдет ожидания.
+            </p>
+            <a
+              href="#contact"
+              className="inline-block bg-accent hover:bg-accent/90 text-black px-8 py-3 rounded-lg font-technical font-medium transition-colors"
+            >
+              Начать проект
+            </a>
+          </div>
         </div>
       </div>
     </section>
