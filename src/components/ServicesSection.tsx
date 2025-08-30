@@ -56,10 +56,6 @@ export default function ServicesSection() {
       <div className="relative z-10 px-6 lg:px-16 xl:px-32">
         <AnimatedSection className="text-center mb-16">
           <div className="space-y-6">
-            <div className="text-xs font-medium tracking-wider text-accent uppercase">
-              Наши услуги
-            </div>
-
             <h2 className="text-fluid-lg font-technical font-medium text-white leading-tight max-w-4xl mx-auto">
               От мечты — к плану. <span className="text-accent">От плана — к дому.</span>
             </h2>
