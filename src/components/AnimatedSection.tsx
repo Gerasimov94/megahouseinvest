@@ -47,7 +47,7 @@ export default function AnimatedSection({
 
   const getAnimationClasses = () => {
     const base = 'transition-all duration-700 ease-out';
-    
+
     if (!isVisible) {
       switch (animation) {
         case 'fade-up':
