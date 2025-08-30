@@ -185,7 +185,7 @@ export default function ContactSection() {
 
               <button
                 type="submit"
-                className="w-full bg-primary hover:bg-primary-dark text-white py-3 px-6 rounded-lg font-medium transition-colors"
+                className="w-full bg-accent hover:bg-primary-dark text-white py-3 px-6 rounded-lg font-medium transition-colors"
               >
                 Отправить заявку
               </button>

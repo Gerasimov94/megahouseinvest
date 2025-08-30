@@ -46,7 +46,7 @@ export default function ServicesSection() {
   ];
 
   return (
-    <section className="py-16 bg-black relative overflow-hidden">
+    <section className="py-16 bg-neutral-950 relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 opacity-20">
         <div className="absolute top-32 left-20 w-40 h-40 bg-accent/30 rounded-full blur-3xl"></div>

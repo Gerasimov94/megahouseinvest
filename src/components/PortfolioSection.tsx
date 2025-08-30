@@ -48,11 +48,11 @@ const testimonials = [
 
 export default function PortfolioSection() {
   return (
-    <section id="portfolio" className="section-padding bg-white">
-      <div className="container">
+    <section id="portfolio" className="py-16 lg:py-24 bg-white">
+      <div className="px-6 lg:px-16 xl:px-32">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold font-display text-foreground mb-4">
-            Наши проекты
+          <h2 className="text-3xl md:text-4xl font-bold font-technical text-foreground mb-4">
+            Наши <span className="text-accent">проекты</span>
           </h2>
           <p className="text-lg text-primary-dark max-w-2xl mx-auto">
             Уже более 500 семей живут в домах, построенных нашими специалистами!
@@ -90,45 +90,51 @@ export default function PortfolioSection() {
             </div>
           ))}
         </div>
+      </div>
+    </section>
+  );
+}
 
-        {/* Testimonials */}
-        <div className="bg-muted rounded-2xl p-8 md:p-12">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold font-technical mb-4">
-              Отзывы клиентов
-            </h2>
-            <p className="text-primary-dark">
-              Что говорят о нас наши клиенты
-            </p>
-          </div>
+// Компонент отзывов клиентов
+export function TestimonialsSection() {
+  return (
+    <section className="py-16 lg:py-24 bg-neutral-950">
+      <div className="px-6 lg:px-16 xl:px-32">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold font-technical mb-4 text-white">
+            Отзывы <span className="text-accent">клиентов</span>
+          </h2>
+          <p className="text-white/80 max-w-2xl mx-auto">
+            Что говорят о нас наши клиенты
+          </p>
+        </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <div key={index} className="bg-white p-6 rounded-xl shadow-sm border border-border">
-                {/* Rating */}
-                <div className="flex mb-4">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <svg key={i} className="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                    </svg>
-                  ))}
+        <div className="grid md:grid-cols-3 gap-8">
+          {testimonials.map((testimonial, index) => (
+            <div key={index} className="bg-white/10 backdrop-blur-sm p-6 rounded-xl border border-white/20 hover:bg-white/15 hover:border-accent/50 transition-all duration-300">
+              {/* Rating */}
+              <div className="flex mb-4">
+                {[...Array(testimonial.rating)].map((_, i) => (
+                  <svg key={i} className="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                ))}
+              </div>
+              
+              <p className="text-white/80 mb-4 italic">
+                &ldquo;{testimonial.text}&rdquo;
+              </p>
+              
+              <div>
+                <div className="font-semibold text-white">
+                  {testimonial.name}
                 </div>
-                
-                <p className="text-primary-dark mb-4 italic">
-                  &ldquo;{testimonial.text}&rdquo;
-                </p>
-                
-                <div>
-                  <div className="font-semibold text-foreground">
-                    {testimonial.name}
-                  </div>
-                  <div className="text-sm text-primary-dark">
-                    {testimonial.project}
-                  </div>
+                <div className="text-sm text-white/60">
+                  {testimonial.project}
                 </div>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

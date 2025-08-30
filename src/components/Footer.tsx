@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 export default function Footer() {
   return (
-    <footer className="bg-black text-white relative overflow-hidden">
+    <footer className="bg-neutral-950 text-white relative overflow-hidden">
       {/* Technical Grid Background */}
       <div className="absolute inset-0 opacity-5">
         <div className="w-full h-full" style={{
@@ -15,7 +15,7 @@ export default function Footer() {
         }}></div>
       </div>
 
-      <div className="relative z-10 py-16 lg:py-24 px-6 lg:px-16 xl:px-32">
+      <div className="relative z-10 py-16 lg:pb-24 px-6 lg:px-16 xl:px-32">
           <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-12 mb-12">
             {/* Company Info */}
             <div className="lg:col-span-2 space-y-6">

@@ -33,12 +33,15 @@ const steps = [
 
 export default function WorkProcessSection() {
   return (
-    <section className="py-16 bg-muted">
+    <section className="py-16 bg-neutral-950">
       <div className="px-6 lg:px-16 xl:px-32">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold font-technical text-foreground mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold font-technical text-white mb-4">
             Всего <span className="text-accent">шесть шагов</span> и ваш дом готов!
           </h2>
+          <p className="text-lg text-white/80 max-w-2xl mx-auto">
+            Пошаговый процесс строительства вашего дома
+          </p>
         </div>
 
         <div className="relative steps-timeline">
@@ -54,30 +57,53 @@ export default function WorkProcessSection() {
                     {step.number}
                   </div>
                 </div>
-                <div className="flex-1 bg-white p-6 md:p-8 rounded-xl shadow-sm border border-border hover:shadow-md transition-shadow duration-300">
-                  <h3 className="text-lg md:text-xl font-semibold font-technical text-foreground mb-3 md:mb-4">
+                <div className="flex-1 bg-white/10 backdrop-blur-sm p-6 md:p-8 rounded-xl shadow-sm border border-white/20 hover:bg-white/15 hover:border-accent/50 transition-all duration-300">
+                  <h3 className="text-lg md:text-xl font-semibold font-technical text-white mb-3 md:mb-4">
                     {step.title}
                   </h3>
-                  <p className="text-primary-dark leading-relaxed text-sm md:text-base">
+                  <p className="text-white/80 leading-relaxed text-sm md:text-base">
                     {step.description}
                   </p>
                 </div>
               </div>
             ))}
           </div>
+          
+          <style dangerouslySetInnerHTML={{
+            __html: `
+              .steps-timeline .last-step::after {
+                content: '';
+                position: absolute;
+                left: -2px;
+                top: 48px;
+                width: 6px;
+                height: 200px;
+                background: #0f172a;
+                z-index: 5;
+              }
+              @media (min-width: 768px) {
+                .steps-timeline .last-step::after {
+                  left: -2px;
+                  top: 64px;
+                  width: 6px;
+                  height: 250px;
+                }
+              }
+            `
+          }} />
         </div>
 
-        <div className="text-center mt-16">
-          <div className="bg-white/50 border border-border shadow-sm backdrop-blur-sm rounded-2xl py-8 mx-auto">
-            <h3 className="text-2xl text-foreground font-technical mb-4">
+                <div className="text-center mt-16">
+          <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 max-w-4xl mx-auto border border-white/20">
+            <h3 className="text-xl font-semibold font-technical text-white mb-4">
               Итог:
             </h3>
-            <p className="text-primary-dark mb-6 leading-relaxed">
+            <p className="text-white/80 mb-6 leading-relaxed">
               Вы экономите ваше время, нервы и бюджет, получая гарантированный результат,
               который превзойдет ожидания.
             </p>
             <a
-              href="#contact"
+              href="#contact" 
               className="inline-block bg-accent hover:bg-accent/90 text-black px-8 py-3 rounded-lg font-technical font-medium transition-colors"
             >
               Начать проект

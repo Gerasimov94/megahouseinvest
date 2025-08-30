@@ -3,7 +3,7 @@ import AboutSection from '@/components/AboutSection';
 import ServicesSection from '@/components/ServicesSection';
 import AdvantagesSection from '@/components/AdvantagesSection';
 import WorkProcessSection from '@/components/WorkProcessSection';
-import PortfolioSection from '@/components/PortfolioSection';
+import PortfolioSection, { TestimonialsSection } from '@/components/PortfolioSection';
 import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
 import PlayerSection from '@/components/PlayerSection';
@@ -30,6 +30,9 @@ export default function Home() {
         </section>
         <section className="scroll-section section-full">
           <PortfolioSection />
+        </section>
+        <section>
+          <TestimonialsSection />
         </section>
         <section className="scroll-section section-full">
           <ContactSection />
