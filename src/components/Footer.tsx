@@ -74,12 +74,12 @@ export default function Footer() {
                 >
                   О компании
                 </Link>
-                <Link
+                {/* <Link
                   href="/services"
                   className="block text-white/70 hover:text-accent transition-colors font-technical text-sm"
                 >
                   Услуги
-                </Link>
+                </Link> */}
                 <Link
                   href="/#portfolio"
                   className="block text-white/70 hover:text-accent transition-colors font-technical text-sm"

@@ -20,7 +20,7 @@ export default function Header() {
   const navItems = [
     { name: 'Главная', href: '/' },
     { name: 'О компании', href: '/about' },
-    { name: 'Услуги', href: '/services' },
+    // { name: 'Услуги', href: '/services' },
     { name: 'Портфолио', href: '/#portfolio' },
   ];
 
