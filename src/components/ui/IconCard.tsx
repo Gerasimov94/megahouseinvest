@@ -15,18 +15,6 @@ export default function IconCard({
   variant = 'light',
   className = '' 
 }: IconCardProps) {
-  const getCardClasses = () => {
-    switch (variant) {
-      case 'dark':
-        return 'bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/15 hover:border-accent/50';
-      case 'glass':
-        return 'bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/15 hover:border-accent/50';
-      case 'light':
-      default:
-        return 'bg-muted border border-border hover:shadow-lg';
-    }
-  };
-
   const getTitleColor = () => {
     return variant === 'light' ? 'text-foreground' : 'text-white';
   };
