@@ -5,7 +5,6 @@ import type { Metadata } from "next";
 import SectionWrapper from "@/components/ui/SectionWrapper";
 import PageHero from "@/components/ui/PageHero";
 import SectionHeader from "@/components/ui/SectionHeader";
-import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "О компании - MegaHouse Invest",
