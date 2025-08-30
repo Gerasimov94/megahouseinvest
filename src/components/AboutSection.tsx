@@ -32,10 +32,9 @@ export default function AboutSection() {
       <div className="relative z-10 px-6 lg:px-16 xl:px-32">
         <AnimatedSection animation="fade-up">
           <div className="space-y-16">
-            {/* Mission Statement */}
             <div className="space-y-6 text-center">
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-technical font-medium text-primary leading-tight">
-                О <span className="text-accent">КОМПАНИИ</span>
+                О КОМПАНИИ
               </h2>
               <div className="space-y-4 text-primary-light font-technical text-lg md:text-xl leading-relaxed max-w-4xl mx-auto">
                 <p>
