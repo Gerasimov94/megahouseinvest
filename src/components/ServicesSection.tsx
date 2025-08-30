@@ -38,7 +38,7 @@ export default function ServicesSection() {
       description: 'Чистовая отделка интерьера и экстерьера с вниманием к каждой детали',
       icon: (
         <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zM7 3H5a2 2 0 00-2 2v12a4 4 0 004 4h2M9 3h2a2 2 0 012 2v12a4 4 0 01-4 4H7m2-16v16" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.53 16.122a3 3 0 0 0-5.78 1.128 2.25 2.25 0 0 1-2.4 2.245 4.5 4.5 0 0 0 8.4-2.245c0-.399-.078-.78-.22-1.128Zm0 0a15.998 15.998 0 0 0 3.388-1.62m-5.043-.025a15.994 15.994 0 0 1 1.622-3.395m3.42 3.42a15.995 15.995 0 0 0 4.764-4.648l3.876-5.814a1.151 1.151 0 0 0-1.597-1.597L14.146 6.32a15.996 15.996 0 0 0-4.649 4.763m3.42 3.42a6.776 6.776 0 0 0-3.42-3.42" />
         </svg>
       ),
       features: ['Внутренняя отделка', 'Фасадные работы', 'Ландшафтный дизайн']
@@ -75,18 +75,19 @@ export default function ServicesSection() {
               delay={index * 100}
               className="group"
             >
-              <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-8 h-full hover:bg-white/15 hover:border-accent/50 transition-all duration-300 relative overflow-hidden">
+              <div className="flex flex-col gap-4 justify-between bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-8 h-full hover:bg-white/15 hover:border-accent/50 transition-all duration-300 relative overflow-hidden">
                 {/* Icon */}
-                <div className="text-accent mb-4">
-                  {service.icon}
-                </div>
-                
-                {/* Content */}
-                <div className="space-y-4">
+                <div className="flex justify-start items-center gap-2">
+                  <div className="text-accent">
+                    {service.icon}
+                  </div>
                   <h3 className="text-xl font-technical font-medium text-white">
                     {service.title}
                   </h3>
-
+                </div>
+               
+                {/* Content */}
+                <div className="space-y-4">
                   <p className="text-white/80 leading-relaxed">
                     {service.description}
                   </p>

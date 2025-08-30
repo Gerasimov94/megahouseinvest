@@ -55,7 +55,7 @@ export default function PortfolioSection() {
             Наши <span className="text-accent">проекты</span>
           </h2>
           <p className="text-lg text-primary-dark max-w-2xl mx-auto">
-            Уже более 500 семей живут в домах, построенных нашими специалистами!
+            Уже более 200 семей живут в домах, построенных нашими специалистами!
           </p>
         </div>
 

@@ -38,7 +38,7 @@ export default function AboutPage() {
                 </h2>
                 <div className="space-y-4 text-primary-dark">
                   <p>
-                    Компания MegaHouse Invest была основана в 2008 году группой 
+                    Компания MegaHouse Invest была основана в 2018 году группой 
                     опытных строителей и архитекторов, объединенных общей идеей — 
                     создавать дома, которые служат поколениями.
                   </p>
@@ -103,59 +103,6 @@ export default function AboutPage() {
                   Мы хотим, чтобы каждый наш проект стал эталоном качества.
                 </p>
               </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Team */}
-        <section className="section-padding bg-white">
-          <div className="container">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold font-display text-foreground mb-4">
-                Наша команда
-              </h2>
-              <p className="text-lg text-primary-dark max-w-2xl mx-auto">
-                Профессионалы с многолетним опытом, которые делают ваши мечты реальностью
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-3 gap-8">
-              {[
-                {
-                  name: 'Александр Петров',
-                  position: 'Генеральный директор',
-                  experience: '20 лет в строительстве'
-                },
-                {
-                  name: 'Елена Смирнова',
-                  position: 'Главный архитектор',
-                  experience: '15 лет в проектировании'
-                },
-                {
-                  name: 'Дмитрий Козлов',
-                  position: 'Технический директор',
-                  experience: '18 лет в строительстве'
-                }
-              ].map((member, index) => (
-                <div key={index} className="text-center">
-                  <div className="w-32 h-32 bg-gradient-to-br from-primary-light to-primary rounded-full mx-auto mb-6">
-                    <div className="w-full h-full flex items-center justify-center text-white/30">
-                      <svg className="w-16 h-16" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd" />
-                      </svg>
-                    </div>
-                  </div>
-                  <h3 className="text-xl font-semibold font-display text-foreground mb-2">
-                    {member.name}
-                  </h3>
-                  <p className="text-primary font-medium mb-1">
-                    {member.position}
-                  </p>
-                  <p className="text-sm text-primary-dark">
-                    {member.experience}
-                  </p>
-                </div>
-              ))}
             </div>
           </div>
         </section>
