@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { COMPANY_CONTACTS } from '@/lib/constants';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -77,16 +78,16 @@ export default function Header() {
               <div className={`font-technical text-xs ${
                 isScrolled ? 'text-primary/70' : 'text-white/80'
               }`}>
-                Ул.Текучева 238/73
+                {COMPANY_CONTACTS.address.display}
               </div>
               <div className="flex flex-col space-y-0.5">
                 <a
-                  href="tel:+79001847777"
+                  href={COMPANY_CONTACTS.phone.href}
                   className={`font-technical text-sm hover:text-accent transition-colors ${
                     isScrolled ? 'text-primary' : 'text-white'
                   }`}
                 >
-                  +7-900-184-77-77
+                  {COMPANY_CONTACTS.phone.display}
                 </a>
               </div>
             </div>
@@ -132,14 +133,14 @@ export default function Header() {
               <div className="border-t border-border/20 pt-4 mt-4">
                 <div className="space-y-2">
                   <div className="font-technical text-xs text-primary/70">
-                    Ул.Текучева 238/73
+                    {COMPANY_CONTACTS.address.display}
                   </div>
                   <div className="space-y-1">
                     <a
-                      href="tel:+79001847777"
+                      href={COMPANY_CONTACTS.phone.href}
                       className="block font-technical text-sm text-primary hover:text-accent transition-colors"
                     >
-                     +7-900-184-77-77
+                     {COMPANY_CONTACTS.phone.display}
                     </a>
                   </div>
                 </div>

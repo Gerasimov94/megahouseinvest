@@ -1,4 +1,5 @@
 import AnimatedSection from './AnimatedSection';
+import { COMPANY_CONTACTS } from '@/lib/constants';
 
 export default function ServicesSection() {
   const services = [
@@ -128,7 +129,7 @@ export default function ServicesSection() {
                 Получить консультацию
               </a>
               <a
-                href="tel:+79001847777"
+                href={COMPANY_CONTACTS.phone.href}
                 className="bg-white/20 text-white px-8 py-4 rounded-lg font-technical font-medium hover:bg-white/30 transition-colors border border-white/30"
               >
                 Позвонить сейчас

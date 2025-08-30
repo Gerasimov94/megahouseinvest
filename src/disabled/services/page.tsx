@@ -2,6 +2,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { COMPANY_CONTACTS } from '@/lib/constants';
 
 export const metadata: Metadata = {
   title: 'Услуги - MegaHouse Invest',
@@ -281,7 +282,7 @@ export default function ServicesPage() {
                  Получить консультацию
                </Link>
               <a 
-                href="tel:+79001847777" 
+                href={COMPANY_CONTACTS.phone.href}
                 className="inline-block border-2 border-white text-white hover:bg-white hover:text-primary px-8 py-3 rounded-lg font-medium transition-colors"
               >
                 Позвонить сейчас

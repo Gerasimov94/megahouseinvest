@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { COMPANY_CONTACTS } from '@/lib/constants';
 
 export default function Footer() {
   return (
@@ -100,19 +101,19 @@ export default function Footer() {
               <h3 className="font-technical font-semibold text-lg mb-6 text-white">Контакты</h3>
               <div className="space-y-4">
                 <a
-                  href="tel:+79001847777"
+                  href={COMPANY_CONTACTS.phone.href}
                   className="block text-white/70 hover:text-accent transition-colors font-technical text-sm"
                 >
-                  +7-900-184-77-77
+                  {COMPANY_CONTACTS.phone.display}
                 </a>
                 <a
-                  href="mailto:megahouseinvest@mail.ru"
+                  href={COMPANY_CONTACTS.email.href}
                   className="block text-white/70 hover:text-accent transition-colors font-technical text-sm"
                 >
-                  megahouseinvest@mail.ru
+                  {COMPANY_CONTACTS.email.display}
                 </a>
                 <div className="text-white/70 font-technical text-sm">
-                  Ул.Текучева 238/73
+                  {COMPANY_CONTACTS.address.display}
                 </div>
                 <div className="text-white/60 text-xs font-technical">
                   Пн-Пт: 9:00-18:00<br />

@@ -1,6 +1,8 @@
 'use client';
 
 import { useState } from 'react';
+import StatusMessage from '@/components/ui/StatusMessage';
+import { COMPANY_CONTACTS } from '@/lib/constants';
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
@@ -10,18 +12,71 @@ export default function ContactSection() {
     message: ''
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    alert('Спасибо за заявку! Мы свяжемся с вами в ближайшее время.');
-    setFormData({ name: '', phone: '', email: '', message: '' });
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
+
+    try {
+      const response = await fetch('/api/send-telegram', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setSubmitStatus('success');
+        setFormData({ name: '', phone: '', email: '', message: '' });
+      } else {
+        console.error('Error:', data.error);
+        setSubmitStatus('error');
+      }
+    } catch (error) {
+      console.error('Network error:', error);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const formatPhoneNumber = (value: string): string => {
+    // Удаляем все символы кроме цифр
+    const phoneNumber = value.replace(/\D/g, '');
+
+    // Если номер начинается с 8, заменяем на 7
+    const normalizedNumber = phoneNumber.startsWith('8') ? '7' + phoneNumber.slice(1) : phoneNumber;
+
+    // Применяем маску +7 (***) ***-**-**
+    if (normalizedNumber.length === 0) return '';
+    if (normalizedNumber.length <= 1) return '+7';
+    if (normalizedNumber.length <= 4) return `+7 (${normalizedNumber.slice(1)}`;
+    if (normalizedNumber.length <= 7) return `+7 (${normalizedNumber.slice(1, 4)}) ${normalizedNumber.slice(4)}`;
+    if (normalizedNumber.length <= 9) return `+7 (${normalizedNumber.slice(1, 4)}) ${normalizedNumber.slice(4, 7)}-${normalizedNumber.slice(7)}`;
+    return `+7 (${normalizedNumber.slice(1, 4)}) ${normalizedNumber.slice(4, 7)}-${normalizedNumber.slice(7, 9)}-${normalizedNumber.slice(9, 11)}`;
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData(prev => ({
-      ...prev,
-      [e.target.name]: e.target.value
-    }));
+    const { name, value } = e.target;
+
+    if (name === 'phone') {
+      const formattedPhone = formatPhoneNumber(value);
+      setFormData(prev => ({
+        ...prev,
+        [name]: formattedPhone
+      }));
+    } else {
+      setFormData(prev => ({
+        ...prev,
+        [name]: value
+      }));
+    }
   };
 
   return (
@@ -37,16 +92,12 @@ export default function ContactSection() {
         </div>
 
         <div className="flex flex-col lg:grid lg:grid-cols-2 gap-12">
-          {/* Contact Info - показывается второй на мобильных, первой на десктопе */}
           <div className="space-y-8 order-2 lg:order-1">
             <div>
-              <h3 className="text-2xl font-bold font-display text-foreground mb-6">
-                Свяжитесь с нами
-              </h3>
-              <p className="text-primary-dark mb-8">
-                Мы готовы ответить на все ваши вопросы и предложить оптимальные решения 
+              <h3 className="text-primary-dark mb-8">
+                Мы готовы ответить на все ваши вопросы и предложить оптимальные решения
                 для строительства вашего дома.
-              </p>
+              </h3>
             </div>
 
             <div className="space-y-6">
@@ -59,8 +110,8 @@ export default function ContactSection() {
                 </div>
                 <div>
                   <h4 className="font-semibold text-foreground mb-1">Телефон</h4>
-                  <a href="tel:+79001847777" className="text-primary-dark hover:text-primary transition-colors">
-                    +7-900-184-77-77
+                  <a href={COMPANY_CONTACTS.phone.href} className="text-primary-dark hover:text-primary transition-colors">
+                    {COMPANY_CONTACTS.phone.display}
                   </a>
                 </div>
               </div>
@@ -75,8 +126,8 @@ export default function ContactSection() {
                 </div>
                 <div>
                   <h4 className="font-semibold text-foreground mb-1">Email</h4>
-                  <a href="mailto:megahouseinvest@mail.ru" className="text-primary-dark hover:text-primary transition-colors">
-                    megahouseinvest@mail.ru
+                  <a href={COMPANY_CONTACTS.email.href} className="text-primary-dark hover:text-primary transition-colors">
+                    {COMPANY_CONTACTS.email.display}
                   </a>
                 </div>
               </div>
@@ -91,7 +142,7 @@ export default function ContactSection() {
                 <div>
                   <h4 className="font-semibold text-foreground mb-1">Адрес</h4>
                   <p className="text-primary-dark">
-                    Ул.Текучева 238/73
+                    {COMPANY_CONTACTS.address.display}
                   </p>
                 </div>
               </div>
@@ -106,8 +157,8 @@ export default function ContactSection() {
                 <div>
                   <h4 className="font-semibold text-foreground mb-1">Время работы</h4>
                   <p className="text-primary-dark">
-                    Пн-Пт: 9:00 - 18:00<br />
-                    Сб-Вс: 10:00 - 16:00
+                    {COMPANY_CONTACTS.workingHours.weekdays}<br />
+                    {COMPANY_CONTACTS.workingHours.weekends}
                   </p>
                 </div>
               </div>
@@ -119,7 +170,7 @@ export default function ContactSection() {
             <h3 className="text-xl font-bold font-display text-foreground mb-6">
               Оставить заявку
             </h3>
-            
+
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
@@ -149,7 +200,7 @@ export default function ContactSection() {
                   value={formData.phone}
                   onChange={handleChange}
                   className="w-full px-4 py-3 rounded-lg border border-border bg-white text-foreground focus:border-primary focus:outline-none transition-colors"
-                  placeholder="+7 (900) 184-77-77"
+                  placeholder="+7 (777) 123-45-67"
                 />
               </div>
 
@@ -179,16 +230,43 @@ export default function ContactSection() {
                   value={formData.message}
                   onChange={handleChange}
                   className="w-full px-4 py-3 rounded-lg border border-border bg-white text-foreground focus:border-primary focus:outline-none transition-colors resize-none"
-                  placeholder="Расскажите о ваших пожеланиях, или оставьте заявку - наши специалисты свяжутся с вами в ближайшее время."
+                  placeholder="Расскажите о ваших пожеланиях"
                 />
               </div>
 
               <button
                 type="submit"
-                className="w-full bg-accent hover:bg-primary-dark text-white py-3 px-6 rounded-lg font-medium transition-colors"
+                disabled={isSubmitting}
+                className="w-full bg-accent hover:bg-primary-dark text-white py-3 px-6 rounded-lg font-medium transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center space-x-2"
               >
-                Отправить заявку
+                {isSubmitting ? (
+                  <>
+                    <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                    </svg>
+                    <span>Отправка...</span>
+                  </>
+                ) : (
+                  <>
+                    <span>Связаться с нами</span>
+                  </>
+                )}
               </button>
+
+              {submitStatus === 'success' && (
+                <StatusMessage
+                  type="success"
+                  message="Заявка отправлена! Мы свяжемся с вами в ближайшее время."
+                />
+              )}
+
+              {submitStatus === 'error' && (
+                <StatusMessage
+                  type="error"
+                  message={`Ошибка отправки. Попробуйте позже или свяжитесь по телефону: ${COMPANY_CONTACTS.phone.display}`}
+                />
+              )}
             </form>
           </div>
         </div>
