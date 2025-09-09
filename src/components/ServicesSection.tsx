@@ -47,13 +47,7 @@ export default function ServicesSection() {
   ];
 
   return (
-    <section className="py-16 bg-neutral-950 relative overflow-hidden">
-      {/* Background Elements */}
-      <div className="absolute inset-0 opacity-20">
-        <div className="absolute top-32 left-20 w-40 h-40 bg-accent/30 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-32 right-20 w-56 h-56 bg-accent/20 rounded-full blur-3xl"></div>
-      </div>
-
+    <section className="py-16 bg-neutral-950 relative overflow-hidden w-full">
       <div className="relative z-10 px-6 lg:px-16 xl:px-32">
         <AnimatedSection className="text-center mb-16">
           <div className="space-y-6">
