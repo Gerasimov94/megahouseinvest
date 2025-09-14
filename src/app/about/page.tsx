@@ -7,7 +7,8 @@ import PageHero from "@/components/ui/PageHero";
 import SectionHeader from "@/components/ui/SectionHeader";
 
 export const metadata: Metadata = {
-  title: "О компании - MegaHouse Invest",
+  title: "О компании - МегаХаусИнвест",
+  keywords: "о компании, мега хаус инвест, mega house invest, строительная компания",
   description:
     "Узнайте больше о нашей строительной компании, нашей истории, команде и принципах работы.",
 };

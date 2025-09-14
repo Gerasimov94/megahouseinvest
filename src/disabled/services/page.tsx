@@ -5,7 +5,7 @@ import type { Metadata } from 'next';
 import { COMPANY_CONTACTS } from '@/lib/constants';
 
 export const metadata: Metadata = {
-  title: 'Услуги - MegaHouse Invest',
+  title: 'Услуги - МегаХаусИнвест',
   description: 'Полный спектр строительных услуг: от проектирования до сдачи объекта под ключ. Строительство домов, коттеджей, коммерческих объектов.',
 };
 
