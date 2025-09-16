@@ -13,6 +13,7 @@ export const metadata: Metadata = {
   },
   verification: {
     google: 'qQ9UQJvK8uULQxs8jTicz4SbeNFRQkJCmvEkFphnpFs',
+    yandex: 'cabf0f0daf2c9e30',
   }
 };
 
