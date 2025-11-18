@@ -1,46 +1,23 @@
-const projects = [
-  {
-    title: 'Загородный дом в Подмосковье',
-    area: '280 м²',
-    year: '2023',
-    description: 'Современный двухэтажный дом с панорамными окнами и террасой'
-  },
-  {
-    title: 'Коттедж в скандинавском стиле',
-    area: '160 м²',
-    year: '2023',
-    description: 'Уютный дом из натурального дерева с большими окнами'
-  },
-  {
-    title: 'Дом в стиле хай-тек',
-    area: '320 м²',
-    year: '2022',
-    description: 'Минималистичный дом с использованием современных технологий'
-  },
-  {
-    title: 'Классический особняк',
-    area: '450 м²',
-    year: '2022',
-    description: 'Респектабельный дом в классическом стиле с колоннами'
-  }
-];
+import Link from 'next/link';
+import { PROJECTS } from '@/lib/constants';
+import Image from 'next/image';
 
 const testimonials = [
   {
     name: 'Михаил Петров',
-    project: 'Загородный дом',
+    project: 'Дом 107 м²',
     text: 'Отличная работа! Дом построили точно в срок, качество превзошло ожидания. Особенно впечатлила работа с инженерными системами.',
     rating: 5
   },
   {
     name: 'Елена Сидорова',
-    project: 'Коттедж',
+    project: 'Дом 109 м²',
     text: 'Очень довольны результатом. Команда профессиональная, всегда на связи. Дом получился именно таким, как мы мечтали.',
     rating: 5
   },
   {
     name: 'Андрей Волков',
-    project: 'Дом хай-тек',
+    project: 'Дом 110 м²',
     text: 'Современные технологии, качественные материалы, соблюдение всех сроков. Рекомендую эту компанию!',
     rating: 5
   }
@@ -48,46 +25,62 @@ const testimonials = [
 
 export default function PortfolioSection() {
   return (
-    <section id="portfolio" className="py-16 lg:py-24 bg-white">
+    <section id="projects" className="py-16 lg:py-24 bg-white">
       <div className="px-6 lg:px-16 xl:px-32">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold font-technical text-foreground mb-4">
             Наши <span className="text-accent">проекты</span>
           </h2>
           <p className="text-lg text-primary-dark max-w-2xl mx-auto">
-            Уже более 200 семей живут в домах, построенных нашими специалистами!
+            Выберите готовый проект дома или закажите индивидуальную разработку
           </p>
         </div>
 
         {/* Portfolio Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
-          {projects.map((project, index) => (
-            <div key={index} className="group cursor-pointer">
+          {PROJECTS.map((project) => (
+            <Link
+              key={project.id}
+              href={`/projects/${project.id}`}
+              className="group cursor-pointer flex flex-col h-full"
+            >
               <div className="aspect-[4/5] bg-gradient-to-br from-primary-light to-primary rounded-xl overflow-hidden mb-4 relative">
-                {/* Placeholder for project image */}
-                <div className="w-full h-full flex items-center justify-center text-white/30">
-                  <svg className="w-16 h-16" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clipRule="evenodd" />
-                  </svg>
-                </div>
-                
+                {/* Project image */}
+                <Image
+                  src={`${project.baseUrl}/1.webp`}
+                  alt={project.title}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                  unoptimized
+                />
+
                 {/* Overlay */}
                 <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                   <span className="text-white font-medium">Посмотреть проект</span>
                 </div>
               </div>
-              
-              <h3 className="font-semibold font-display text-foreground mb-2">
-                {project.title}
-              </h3>
-              <div className="flex justify-between text-sm text-primary-dark mb-2">
-                <span>{project.area}</span>
-                <span>{project.year}</span>
+
+              <div className="flex flex-col flex-grow">
+                <h3 className="font-semibold font-display text-foreground mb-2">
+                  {project.title}
+                </h3>
+                <div className="text-sm text-primary-dark mb-2">
+                  <span>{project.area} м²</span>
+                </div>
+                <p className="text-sm text-primary-dark mb-3 flex-grow">
+                  {project.description}
+                </p>
+                <div className="pt-3 border-t border-border/30 mt-auto">
+                  <div className="flex items-baseline justify-between">
+                    <span className="text-xs text-primary-dark">Стоимость от</span>
+                    <span className="text-lg font-semibold text-accent">
+                      {(project.area * 55000).toLocaleString('ru-RU')} ₽
+                    </span>
+                  </div>
+                </div>
               </div>
-              <p className="text-sm text-primary-dark">
-                {project.description}
-              </p>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
@@ -120,11 +113,11 @@ export function TestimonialsSection() {
                   </svg>
                 ))}
               </div>
-              
+
               <p className="text-white/80 mb-4 italic">
                 &ldquo;{testimonial.text}&rdquo;
               </p>
-              
+
               <div>
                 <div className="font-semibold text-white">
                   {testimonial.name}
@@ -139,4 +132,4 @@ export function TestimonialsSection() {
       </div>
     </section>
   );
-} 
+}

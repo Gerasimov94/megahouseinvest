@@ -21,14 +21,13 @@ export default function Header() {
   const navItems = [
     { name: 'Главная', href: '/' },
     { name: 'О компании', href: '/about' },
-    // { name: 'Услуги', href: '/services' },
-    { name: 'Портфолио', href: '/#portfolio' },
+    { name: 'Проекты', href: '/#projects' },
   ];
 
   return (
-    <header 
+    <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled 
+        isScrolled
           ? 'bg-white/90 backdrop-blur-md shadow-sm border-b border-border/20'
           : 'bg-black/40'
       }`}
@@ -36,11 +35,11 @@ export default function Header() {
       <div className="container">
         <div className="flex items-center justify-between h-20">
           <Link href="/" className="flex items-end space-x-3 group">
-            <Image 
-              src="/logo.svg" 
-              alt="Logo" 
-              width={52} 
-              height={52} 
+            <Image
+              src="/logo.svg"
+              alt="Logo"
+              width={52}
+              height={52}
               className={`transition-all duration-300 ${
                 isScrolled ? '' : 'invert brightness-0'
               }`}
@@ -128,7 +127,7 @@ export default function Header() {
                   {item.name}
                 </Link>
               ))}
-              
+
               {/* Mobile Contacts */}
               <div className="border-t border-border/20 pt-4 mt-4">
                 <div className="space-y-2">
@@ -151,4 +150,4 @@ export default function Header() {
       </div>
     </header>
   );
-} 
+}

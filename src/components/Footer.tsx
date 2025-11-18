@@ -45,12 +45,12 @@ export default function Footer() {
 
               <div className="flex items-center space-x-8">
                 <div>
-                  <div className="text-2xl font-technical font-medium text-accent">5+</div>
+                  <div className="text-2xl font-technical font-medium text-accent">7+</div>
                   <div className="text-sm text-white/60">лет опыта</div>
                 </div>
                 <div>
-                  <div className="text-2xl font-technical font-medium text-accent">50+</div>
-                  <div className="text-sm text-white/60">проектов</div>
+                  <div className="text-2xl font-technical font-medium text-accent">4</div>
+                  <div className="text-sm text-white/60">проекта</div>
                 </div>
                 <div>
                   <div className="text-2xl font-technical font-medium text-accent">100%</div>
@@ -82,10 +82,10 @@ export default function Footer() {
                   Услуги
                 </Link> */}
                 <Link
-                  href="/#portfolio"
+                  href="/#projects"
                   className="block text-white/70 hover:text-accent transition-colors font-technical text-sm"
                 >
-                  Портфолио
+                  Проекты
                 </Link>
                 <Link
                   href="/#contact"
