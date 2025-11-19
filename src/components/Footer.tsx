@@ -49,8 +49,8 @@ export default function Footer() {
                   <div className="text-sm text-white/60">лет опыта</div>
                 </div>
                 <div>
-                  <div className="text-2xl font-technical font-medium text-accent">4</div>
-                  <div className="text-sm text-white/60">проекта</div>
+                  <div className="text-2xl font-technical font-medium text-accent">200+</div>
+                  <div className="text-sm text-white/60">проектов</div>
                 </div>
                 <div>
                   <div className="text-2xl font-technical font-medium text-accent">100%</div>

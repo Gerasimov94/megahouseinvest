@@ -106,7 +106,7 @@ export default async function ProjectPage({ params }: Props) {
               </h2>
               <div className="w-20 h-1 bg-accent mx-auto"></div>
             </div>
-            
+
             <div className="max-w-4xl mx-auto">
               <div className="bg-gradient-to-br from-accent/10 to-accent/5 border-2 border-accent/30 rounded-2xl p-8 md:p-12 text-center">
                 <div className="mb-6">
