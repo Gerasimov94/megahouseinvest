@@ -47,22 +47,22 @@ export default function ServicesSection() {
   ];
 
   return (
-    <section className="py-16 bg-neutral-950 relative overflow-hidden w-full">
+    <section className="py-16 lg:py-24 bg-neutral-950 relative overflow-hidden w-full">
       <div className="relative z-10 px-6 lg:px-16 xl:px-32">
-        <AnimatedSection className="text-center mb-16">
+        <AnimatedSection className="text-center mb-12 lg:mb-16">
           <div className="space-y-6">
             <h2 className="text-fluid-lg font-technical font-medium text-white leading-tight max-w-4xl mx-auto">
               От мечты — к плану. <span className="text-accent">От плана — к дому.</span>
             </h2>
 
-            <p className="text-lg text-white/80 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-lg md:text-xl text-white/80 max-w-2xl mx-auto leading-relaxed">
               Полный цикл строительства от проекта до ключей. Строим дома вашей мечты
               с гарантией качества и соблюдением сроков.
             </p>
           </div>
         </AnimatedSection>
 
-        <div className="grid lg:grid-cols-2 gap-8">
+        <div className="grid lg:grid-cols-2 gap-6 md:gap-8">
           {services.map((service, index) => (
             <AnimatedSection
               key={index}
@@ -76,14 +76,14 @@ export default function ServicesSection() {
                   <div className="text-accent">
                     {service.icon}
                   </div>
-                  <h3 className="text-xl font-technical font-medium text-white">
+                  <h3 className="text-xl md:text-2xl font-technical font-medium text-white">
                     {service.title}
                   </h3>
                 </div>
                
                 {/* Content */}
                 <div className="space-y-4">
-                  <p className="text-white/80 leading-relaxed">
+                  <p className="text-base md:text-lg text-white/80 leading-relaxed">
                     {service.description}
                   </p>
 

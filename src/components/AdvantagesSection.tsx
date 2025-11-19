@@ -51,17 +51,17 @@ export default function AdvantagesSection() {
   return (
     <section className="py-16 lg:py-24 bg-white">
       <div className="px-6 lg:px-16 xl:px-32">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold font-technical text-foreground mb-4">
+        <div className="mb-12 lg:mb-16 text-center">
+          <h2 className="text-3xl md:text-4xl font-technical font-medium text-primary mb-4">
             Наши <span className="text-accent">преимущества</span>
           </h2>
-          <p className="text-lg text-primary-dark max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl text-primary-dark max-w-2xl mx-auto">
             Почему клиенты выбирают именно нас для строительства своих домов
           </p>
         </div>
 
         {/* Advantages Grid */}
-        <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 md:gap-8">
           {advantages.map((advantage, index) => (
             <div key={index} className="text-center group">
               <div className="w-20 h-20 bg-accent/10 rounded-2xl flex items-center justify-center text-accent mx-auto mb-6 group-hover:bg-accent/20 transition-colors duration-300">

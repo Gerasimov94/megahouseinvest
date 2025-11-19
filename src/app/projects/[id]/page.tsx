@@ -46,7 +46,7 @@ export default async function ProjectPage({ params }: Props) {
       <Header />
       <main className="pt-20">
         {/* Hero Section with Background Image */}
-        <section className="relative py-12 lg:py-16 overflow-hidden">
+        <section className="relative py-16 lg:py-24 overflow-hidden">
           {/* Background Image */}
           <div
             className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -108,9 +108,9 @@ export default async function ProjectPage({ params }: Props) {
         </section>
 
         {/* Project Gallery Carousel */}
-        <section className="py-16 bg-neutral-50">
+        <section className="py-16 lg:py-24 bg-neutral-50">
           <div className="px-6 lg:px-16 xl:px-32">
-            <div className="mb-12">
+            <div className="mb-12 lg:mb-16">
               <h2 className="text-3xl md:text-4xl font-technical font-medium text-primary mb-4 text-center">
                 Галерея <span className="text-accent">проекта</span>
               </h2>
@@ -123,9 +123,9 @@ export default async function ProjectPage({ params }: Props) {
         </section>
 
         {/* Price Estimate Section */}
-        <section className="py-16 bg-white">
+        <section className="py-16 lg:py-24 bg-white">
           <div className="px-6 lg:px-16 xl:px-32">
-            <div className="mb-12">
+            <div className="mb-12 lg:mb-16">
               <h2 className="text-3xl md:text-4xl font-technical font-medium text-primary mb-4 text-center">
                 Примерная <span className="text-accent">стоимость</span>
               </h2>
@@ -166,15 +166,15 @@ export default async function ProjectPage({ params }: Props) {
         </section>
 
         {/* Documents Section */}
-        <section className="py-16 bg-white">
+        <section className="py-16 lg:py-24 bg-neutral-50">
           <div className="px-6 lg:px-16 xl:px-32">
-            <div className="mb-12">
+            <div className="mb-12 lg:mb-16">
               <h2 className="text-3xl md:text-4xl font-technical font-medium text-primary mb-4 text-center">
                 Документация <span className="text-accent">проекта</span>
               </h2>
               <div className="w-20 h-1 bg-accent mx-auto"></div>
             </div>
-            <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <div className="grid md:grid-cols-2 gap-6 md:gap-8 max-w-4xl mx-auto">
               {/* PDF Plan */}
               <a
                 href={`${project.baseUrl}/plan.pdf`}
@@ -229,7 +229,7 @@ export default async function ProjectPage({ params }: Props) {
         </section>
 
         {/* CTA Section */}
-        <section className="py-16 bg-neutral-50">
+        <section className="py-16 lg:py-24 bg-white">
           <div className="px-6 lg:px-16 xl:px-32 text-center">
             <div className="max-w-4xl mx-auto">
               <h2 className="text-3xl md:text-4xl font-technical font-medium text-primary mb-4">

@@ -19,7 +19,7 @@ export default function AboutPage() {
       <Header />
       <main className="pt-20">
         {/* Hero Section */}
-        <SectionWrapper variant="dark" className="pt-16 pb-4">
+        <SectionWrapper variant="dark" className="py-16 lg:py-24">
           <PageHero
             title="О"
             accent="КОМПАНИИ"
@@ -29,7 +29,7 @@ export default function AboutPage() {
         </SectionWrapper>
 
         {/* Company Story */}
-        <SectionWrapper variant="dark" className="pt-16 lg:pt-0">
+        <SectionWrapper variant="dark" className="py-16 lg:py-24">
           <SectionHeader
             title="Наша"
             accent="история"
@@ -81,15 +81,15 @@ export default function AboutPage() {
         </SectionWrapper>
 
         {/* Mission & Vision */}
-        <section className="py-16 bg-white">
+        <section className="py-16 lg:py-24 bg-white">
           <div className="px-6 lg:px-16 xl:px-32">
-            <div className="text-center mb-16">
+            <div className="mb-12 lg:mb-16 text-center">
               <h2 className="text-3xl md:text-4xl font-technical font-medium text-primary mb-4">
                 Миссия и <span className="text-accent">видение</span>
               </h2>
               <div className="w-20 h-1 bg-accent mx-auto"></div>
             </div>
-            <div className="grid md:grid-cols-2 gap-12">
+            <div className="grid md:grid-cols-2 gap-6 md:gap-8">
               <div className="bg-muted p-8 rounded-2xl border border-border hover:shadow-lg transition-all duration-300">
                 <div className="w-16 h-16 bg-accent/10 rounded-2xl flex items-center justify-center text-accent mb-6">
                   <svg
@@ -152,18 +152,18 @@ export default function AboutPage() {
         </section>
 
         {/* Values */}
-        <section className="py-16 bg-neutral-950">
+        <section className="py-16 lg:py-24 bg-neutral-950">
           <div className="px-6 lg:px-16 xl:px-32">
-            <div className="text-center mb-16">
+            <div className="mb-12 lg:mb-16 text-center">
               <h2 className="text-3xl md:text-4xl font-technical font-medium text-white mb-4">
                 Наши <span className="text-accent">ценности</span>
               </h2>
-              <p className="text-lg text-white/80 max-w-2xl mx-auto">
+              <p className="text-lg md:text-xl text-white/80 max-w-2xl mx-auto">
                 Принципы, которыми мы руководствуемся в работе
               </p>
             </div>
 
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
               {[
                 {
                   title: "Качество",
@@ -267,7 +267,7 @@ export default function AboutPage() {
         </section>
 
         {/* CTA */}
-        <section className="py-16 bg-white">
+        <section className="py-16 lg:py-24 bg-white">
           <div className="px-6 lg:px-16 xl:px-32 text-center">
             <div className="bg-muted rounded-3xl p-12 border border-border max-w-4xl mx-auto">
               <h2 className="text-3xl md:text-4xl font-technical font-medium text-primary mb-4">

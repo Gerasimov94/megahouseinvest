@@ -33,10 +33,10 @@ export default function AboutSection() {
         <AnimatedSection animation="fade-up">
           <div className="space-y-16">
             <div className="space-y-6 text-center">
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-technical font-medium text-primary leading-tight">
+              <h2 className="text-3xl md:text-4xl font-technical font-medium text-primary leading-tight">
                 О КОМПАНИИ
               </h2>
-              <div className="space-y-4 text-primary-light font-technical text-lg md:text-xl leading-relaxed max-w-4xl mx-auto">
+              <div className="space-y-4 text-primary-dark text-lg md:text-xl leading-relaxed max-w-4xl mx-auto">
                 <p>
                   Мы не просто строим здания — мы создаем пространства, где начнется новая глава вашей жизни. 
                   Где будут звучать детские шаги и собираться за большим столом несколько поколений семьи. 

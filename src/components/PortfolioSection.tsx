@@ -27,11 +27,11 @@ export default function PortfolioSection() {
   return (
     <section id="projects" className="py-16 lg:py-24 bg-white">
       <div className="px-6 lg:px-16 xl:px-32">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold font-technical text-foreground mb-4">
+        <div className="mb-12 lg:mb-16 text-center">
+          <h2 className="text-3xl md:text-4xl font-technical font-medium text-primary mb-4">
             Наши <span className="text-accent">проекты</span>
           </h2>
-          <p className="text-lg text-primary-dark max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl text-primary-dark max-w-2xl mx-auto">
             Выберите готовый проект дома или закажите индивидуальную разработку
           </p>
         </div>
@@ -93,11 +93,11 @@ export function TestimonialsSection() {
   return (
     <section className="py-16 lg:py-24 bg-neutral-950">
       <div className="px-6 lg:px-16 xl:px-32">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold font-technical mb-4 text-white">
+        <div className="mb-12 lg:mb-16 text-center">
+          <h2 className="text-3xl md:text-4xl font-technical font-medium text-white mb-4">
             Отзывы <span className="text-accent">клиентов</span>
           </h2>
-          <p className="text-white/80 max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl text-white/80 max-w-2xl mx-auto">
             Что говорят о нас наши клиенты
           </p>
         </div>

@@ -39,21 +39,20 @@ const steps = [
 
 export default function WorkProcessSection() {
   return (
-    <section className="py-16 bg-neutral-950">
+    <section className="py-16 lg:py-24 bg-neutral-950">
       <div className="px-6 lg:px-16 xl:px-32">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold font-technical text-white mb-4">
-            Всего <span className="text-accent">шесть шагов</span> и ваш дом
-            готов!
+        <div className="mb-12 lg:mb-16 text-center">
+          <h2 className="text-3xl md:text-4xl font-technical font-medium text-white mb-4">
+            Всего <span className="text-accent">шесть шагов</span> и ваш дом готов!
           </h2>
-          <p className="text-lg text-white/80 max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl text-white/80 max-w-2xl mx-auto">
             Пошаговый процесс строительства вашего дома
           </p>
         </div>
 
         <div className="relative steps-timeline">
           <div className="absolute left-6 md:left-8 top-6 md:top-8 bottom-30 md:bottom-20 w-0.5 bg-gradient-to-b from-accent via-accent to-accent opacity-30"></div>
-          <div className="space-y-8 md:space-y-12">
+          <div className="space-y-6 md:space-y-8">
             {steps.map((step, index) => (
               <div
                 key={index}
@@ -67,7 +66,7 @@ export default function WorkProcessSection() {
                   </div>
                 </div>
                 <div className="flex-1 bg-white/10 backdrop-blur-sm p-6 md:p-8 rounded-xl shadow-sm border border-white/20 hover:bg-white/15 hover:border-accent/50 transition-all duration-300">
-                  <h3 className="text-lg md:text-xl font-semibold font-technical text-white mb-3 md:mb-4">
+                  <h3 className="text-xl md:text-2xl font-technical font-medium text-white mb-3 md:mb-4">
                     {step.title}
                   </h3>
                   <p className="text-white/80 leading-relaxed text-sm md:text-base">
