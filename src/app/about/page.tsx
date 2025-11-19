@@ -49,7 +49,7 @@ export default function AboutPage() {
               </p>
               <p>
                 За годы работы мы реализовали{" "}
-                <span className="text-accent font-semibold">4 проекта</span>{" "}
+                <span className="text-accent font-semibold">200+ проектов</span>{" "}
                 загородных домов: от компактных коттеджей площадью 107 м² до
                 просторных домов площадью 129 м². Каждый проект для нас — это
                 возможность воплотить мечты клиента в реальность.
