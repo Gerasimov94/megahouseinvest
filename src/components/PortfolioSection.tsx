@@ -5,19 +5,19 @@ import Image from 'next/image';
 const testimonials = [
   {
     name: 'Михаил Петров',
-    project: 'Дом 107 м²',
+    project: 'Загородный дом 107 м²',
     text: 'Отличная работа! Дом построили точно в срок, качество превзошло ожидания. Особенно впечатлила работа с инженерными системами.',
     rating: 5
   },
   {
     name: 'Елена Сидорова',
-    project: 'Дом 109 м²',
+    project: 'Компактный коттедж 109 м²',
     text: 'Очень довольны результатом. Команда профессиональная, всегда на связи. Дом получился именно таким, как мы мечтали.',
     rating: 5
   },
   {
     name: 'Андрей Волков',
-    project: 'Дом 110 м²',
+    project: 'Семейный дом 110 м²',
     text: 'Современные технологии, качественные материалы, соблюдение всех сроков. Рекомендую эту компанию!',
     rating: 5
   }
@@ -65,9 +65,6 @@ export default function PortfolioSection() {
                 <h3 className="font-semibold font-display text-foreground mb-2">
                   {project.title}
                 </h3>
-                <div className="text-sm text-primary-dark mb-2">
-                  <span>{project.area} м²</span>
-                </div>
                 <p className="text-sm text-primary-dark mb-3 flex-grow">
                   {project.description}
                 </p>

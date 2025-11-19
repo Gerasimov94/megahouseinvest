@@ -46,7 +46,7 @@ export default async function ProjectPage({ params }: Props) {
       <Header />
       <main className="pt-20">
         {/* Hero Section with Background Image */}
-        <section className="relative py-16 lg:py-24 overflow-hidden">
+        <section className="relative py-10 md:py-12 overflow-hidden">
           {/* Background Image */}
           <div
             className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -58,51 +58,26 @@ export default async function ProjectPage({ params }: Props) {
             <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/80"></div>
           </div>
 
+          {/* Back Button - Absolute Position */}
+          <Link
+            href="/#projects"
+            className="absolute top-4 left-6 lg:left-16 xl:left-32 z-20 inline-flex items-center text-sm text-white/80 hover:text-accent transition-colors group"
+          >
+            <svg className="w-4 h-4 mr-1.5 group-hover:-translate-x-0.5 transition-transform" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+            </svg>
+            <span className="text-sm">К проектам</span>
+          </Link>
+
           {/* Content */}
           <div className="relative z-10 px-6 lg:px-16 xl:px-32 w-full">
-            <div className="mb-6">
-              <Link
-                href="/#projects"
-                className="inline-flex items-center text-white/90 hover:text-accent transition-colors"
-              >
-                <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
-                </svg>
-                Вернуться к проектам
-              </Link>
-            </div>
-
-            <div className="text-center max-w-5xl mx-auto">
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-technical font-bold text-white mb-6 drop-shadow-2xl">
+            <div className="text-center max-w-4xl mx-auto">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-technical font-bold text-white mb-3 drop-shadow-2xl">
                 {project.title}
               </h1>
-
-              {/* Project Info Cards */}
-              <div className="flex flex-wrap items-center justify-center gap-3 md:gap-4">
-                <div className="bg-white/10 backdrop-blur-md border border-white/20 px-4 md:px-6 py-3 rounded-xl">
-                  <div className="flex items-center gap-2 md:gap-3">
-                    <svg className="w-5 h-5 md:w-6 md:h-6 text-accent flex-shrink-0" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 21h16.5M4.5 3h15M5.25 3v18m13.5-18v18M9 6.75h1.5m-1.5 3h1.5m-1.5 3h1.5m3-6H15m-1.5 3H15m-1.5 3H15M9 21v-3.375c0-.621.504-1.125 1.125-1.125h3.75c.621 0 1.125.504 1.125 1.125V21" />
-                    </svg>
-                    <div className="text-left">
-                      <div className="text-white/70 text-xs font-medium">Площадь</div>
-                      <div className="text-white text-base md:text-lg font-bold">{project.area} м²</div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="bg-accent/90 backdrop-blur-md border border-accent px-4 md:px-6 py-3 rounded-xl">
-                  <div className="flex items-center gap-2 md:gap-3">
-                    <svg className="w-5 h-5 md:w-6 md:h-6 text-black flex-shrink-0" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                    <div className="text-left">
-                      <div className="text-black/70 text-xs font-medium">Стоимость от</div>
-                      <div className="text-black text-base md:text-lg font-bold whitespace-nowrap">{(project.area * 55000).toLocaleString('ru-RU')} ₽</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <p className="text-sm md:text-base text-white/80 max-w-xl mx-auto drop-shadow-lg">
+                {project.description}
+              </p>
             </div>
           </div>
         </section>
@@ -127,42 +102,39 @@ export default async function ProjectPage({ params }: Props) {
           <div className="px-6 lg:px-16 xl:px-32">
             <div className="mb-12 lg:mb-16">
               <h2 className="text-3xl md:text-4xl font-technical font-medium text-primary mb-4 text-center">
-                Примерная <span className="text-accent">стоимость</span>
+                Стоимость <span className="text-accent">строительства</span>
               </h2>
               <div className="w-20 h-1 bg-accent mx-auto"></div>
             </div>
-            <div className="max-w-3xl mx-auto">
-
-                <div className="border-t-2 border-accent/30 pt-8 mb-8">
-                  <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-4 text-center md:text-left">
-                    <div className="text-lg md:text-xl font-technical text-primary-dark">
-                      Примерная стоимость проекта:
-                    </div>
-                    <div className="text-3xl md:text-5xl font-technical font-bold text-accent whitespace-nowrap">
-                      {(project.area * 55000).toLocaleString('ru-RU')} <span className="text-2xl md:text-3xl">₽</span>
-                    </div>
+            
+            <div className="max-w-4xl mx-auto">
+              <div className="bg-gradient-to-br from-accent/10 to-accent/5 border-2 border-accent/30 rounded-2xl p-8 md:p-12 text-center">
+                <div className="mb-6">
+                  <div className="text-base md:text-lg text-primary-dark font-medium mb-3">
+                    Стоимость проекта под ключ
+                  </div>
+                  <div className="text-4xl md:text-6xl lg:text-7xl font-technical font-bold text-accent">
+                    {(project.area * 55000).toLocaleString('ru-RU')} <span className="text-3xl md:text-4xl lg:text-5xl">₽</span>
                   </div>
                 </div>
 
-                <div className="bg-accent/5 border border-accent/30 rounded-xl p-6">
+                <div className="bg-white/80 backdrop-blur-sm border border-accent/20 rounded-xl p-6 text-left max-w-2xl mx-auto">
                   <div className="flex items-start gap-3">
                     <svg className="w-6 h-6 text-accent flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" />
                     </svg>
-                    <div>
-                      <div className="font-semibold text-primary mb-2">
-                        Важная информация
-                      </div>
+                    <div className="flex-1">
                       <p className="text-sm text-primary-dark leading-relaxed">
-                        Указана <strong>примерная стоимость</strong> строительства дома под ключ.
-                        Итоговая цена зависит от выбранных материалов, комплектации, сложности участка
-                        и индивидуальных пожеланий. Свяжитесь с нами для точного расчета и консультации.
+                        Указана ориентировочная стоимость строительства дома «под ключ».
+                        Итоговая цена зависит от материалов, комплектации, особенностей участка
+                        и ваших пожеланий. Свяжитесь с нами для точного расчета.
                       </p>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
+          </div>
         </section>
 
         {/* Documents Section */}

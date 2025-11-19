@@ -57,7 +57,7 @@ export const PROJECTS = [
     id: 'house-129',
     title: 'Дом 129 м²',
     area: 129,
-    description: 'Дом с увеличенной площадью и панорамными окнами',
+    description: 'Дом с увеличенной площадью для большой семьи',
     baseUrl: `${PROJECTS_BASE_URL}/house-129`
   }
 ] as const;
