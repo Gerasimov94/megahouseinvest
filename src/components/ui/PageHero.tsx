@@ -19,7 +19,7 @@ export default function PageHero({
   const subtitleColor = variant === 'light' ? 'text-primary-light' : 'text-white/80';
 
   return (
-    <div className={`text-center mb-16 ${className}`}>
+    <div className={`text-center ${className}`}>
       <h1 className={`text-4xl md:text-5xl lg:text-6xl font-technical font-medium ${titleColor} leading-tight mb-6`}>
         {title}{accent && <> <span className="text-accent">{accent}</span></>}
       </h1>

@@ -19,7 +19,7 @@ export default function AboutPage() {
       <Header />
       <main className="pt-20">
         {/* Hero Section */}
-        <SectionWrapper variant="dark" className="py-12 md:py-16">
+        <SectionWrapper variant="dark">
           <PageHero
             title="О"
             accent="КОМПАНИИ"
@@ -29,7 +29,7 @@ export default function AboutPage() {
         </SectionWrapper>
 
         {/* Company Story */}
-        <SectionWrapper variant="dark" className="py-12 md:py-16 lg:py-20">
+        <SectionWrapper variant="dark">
           <SectionHeader
             title="Наша"
             accent="история"

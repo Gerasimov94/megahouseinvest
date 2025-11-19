@@ -61,7 +61,7 @@ export default async function ProjectPage({ params }: Props) {
           {/* Back Button - Absolute Position */}
           <Link
             href="/#projects"
-            className="absolute top-4 left-6 lg:left-16 xl:left-32 z-20 inline-flex items-center text-sm text-white/80 hover:text-accent transition-colors group"
+            className="absolute top-4 left-6 lg:left-16 xl:left-24 z-20 inline-flex items-center text-sm text-white/80 hover:text-accent transition-colors group"
           >
             <svg className="w-4 h-4 mr-1.5 group-hover:-translate-x-0.5 transition-transform" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />

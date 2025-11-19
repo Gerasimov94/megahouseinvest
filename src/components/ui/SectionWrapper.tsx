@@ -6,12 +6,12 @@ interface SectionWrapperProps {
   className?: string;
 }
 
-export default function SectionWrapper({ 
-  children, 
-  variant = 'light', 
-  className = '' 
+export default function SectionWrapper({
+  children,
+  variant = 'light',
+  className = ''
 }: SectionWrapperProps) {
-  const baseClasses = 'py-16';
+  const baseClasses = 'py-8 lg:py-16';
   const variantClasses = variant === 'light' ? 'bg-white' : 'bg-neutral-950';
   const paddingClasses = 'px-6 lg:px-16 xl:px-32';
 

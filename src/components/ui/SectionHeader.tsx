@@ -9,19 +9,19 @@ interface SectionHeaderProps {
   className?: string;
 }
 
-export default function SectionHeader({ 
-  title, 
-  subtitle, 
+export default function SectionHeader({
+  title,
+  subtitle,
   accent,
   variant = 'light',
   showLine = false,
-  className = '' 
+  className = ''
 }: SectionHeaderProps) {
   const titleColor = variant === 'light' ? 'text-primary' : 'text-white';
   const subtitleColor = variant === 'light' ? 'text-primary-light' : 'text-white/80';
 
   return (
-    <div className={`text-center mb-16 ${className}`}>
+    <div className={`text-center ${className}`}>
       <h2 className={`text-3xl md:text-4xl font-technical font-medium ${titleColor} mb-4`}>
         {title}{accent && <> <span className="text-accent">{accent}</span></>}
       </h2>
